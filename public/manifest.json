@@ -8,15 +8,26 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "brindesante48x48.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "48x48"
     },
     {
-      "src": "logo512.png",
+      "src": "brindesante96x96.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "96x96"
+    },
+    {
+      "src": "brindesante120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
     }
+    {
+      "src": "brindesante180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+
   ],
   "start_url": ".",
   "display": "standalone",
