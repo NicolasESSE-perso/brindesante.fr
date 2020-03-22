@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.css";
-import ImgTitre from "./images/Brindesante.svg";
-import ImgLogo from "./images/LogoDelphine.svg";
+import ImgTitre from "./Brindesante.svg";
+import ImgLogo from "./LogoDelphine.svg";
 
 function Titre() {
   return (
