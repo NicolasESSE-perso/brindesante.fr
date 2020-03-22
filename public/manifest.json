@@ -21,13 +21,12 @@
       "src": "brindesante120x120.png",
       "type": "image/png",
       "sizes": "120x120"
-    }
+    },
     {
       "src": "brindesante180x180.png",
       "type": "image/png",
       "sizes": "180x180"
-    },
-
+    }
   ],
   "start_url": ".",
   "display": "standalone",
