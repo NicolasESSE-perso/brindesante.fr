@@ -36,6 +36,16 @@
   margin: 20px 90px 30px 90px;
 }
 
+.GroupeFiches {
+  font-size: 13px;
+  height: 50px;
+}
+
+.GroupeFiches h1 {
+  font-size: 13px;
+  color: white;
+}
+
 @media screen and (max-width: 1024px) {
   .App {
     width: 100%;
