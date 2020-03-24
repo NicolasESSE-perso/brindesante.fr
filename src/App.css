@@ -1,6 +1,22 @@
 .App {
   height: 100vh;
   display: flex;
+  font-family: "Lato", sans-serif;
+}
+
+.App a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.Page {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 0px 20px;
 }
 
 .Menu {
@@ -12,17 +28,18 @@
   align-items: center;
 }
 
-.Entete {
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #c4e3e6;
-  margin: 0px 30px 0px 30px;
+.Titre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 280px;
+  padding: 20px 0px 20px 0px;
+  background-color: #6fa2a7;
 }
 
 .Titre img {
   width: 230px;
   height: 40px;
-  margin: 30px 30px 0px 30px;
 }
 
 .Titre p {
@@ -32,13 +49,23 @@
 }
 
 .Logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #6fa2a7;
+}
+
+.Logo img {
   width: 100px;
-  margin: 20px 90px 30px 90px;
 }
 
 .GroupeFiches {
   font-size: 13px;
   height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .GroupeFiches h1 {
@@ -46,14 +73,111 @@
   color: white;
 }
 
-@media screen and (max-width: 1024px) {
+.LienFiche {
+  background-color: #c4e3e6;
+  height: 50px;
+  width: 240px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.LienFiche h1 {
+  font-size: 16px;
+}
+
+.LienFiche a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #333;
+}
+
+.Entete {
+  width: 100%;
+  min-height: 5%;
+  border-bottom: 1px solid #c4e3e6;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  padding: 0px 30px 0px 30px;
+}
+
+.Nav-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+}
+.Nav-link a {
+  color: #6fa2a7;
+}
+
+.HomePage {
+  display: flex;
+}
+
+.HomePage h1 {
+  font-family: "Pacifico", cursive;
+  color: #6fa2a7;
+  font-size: 22px;
+  max-width: 70%;
+  padding: 30px 20px 20px 30px;
+}
+
+.Entete {
+  display: flex;
+  align-items: center;
+}
+
+.Apropos {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
   .App {
-    width: 100%;
-    background-color: beige;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flexbox;
   }
   .Menu {
+    display: none;
+  }
+
+  .Titre {
     min-width: 100%;
-    flex-direction: column;
-    text-align: center;
+  }
+
+  .Entete {
+    background-color: lightsalmon;
+    display: none;
+  }
+
+  .Page {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .Nav-link {
+    display: none;
+  }
+
+  .homePage {
+    width: 100%;
+  }
+
+  .HomePage h1 {
+    font-family: "Pacifico", cursive;
+    background-color: #6fa2a7;
+    color: white;
+    font-size: 18px;
+    min-width: 100%;
+    padding: 30px 20px 20px 30px;
   }
 }

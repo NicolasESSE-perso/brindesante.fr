@@ -3,8 +3,8 @@ import ImgLogo from "./LogoDelphine.svg";
 
 function LogoDelphine() {
   return (
-    <div>
-      <img className="Logo" src={ImgLogo} alt="Logo" />
+    <div className="Logo">
+      <img src={ImgLogo} alt="Logo" />
     </div>
   );
 }
