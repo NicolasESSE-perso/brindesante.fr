@@ -24,7 +24,10 @@ function Fiche({ match }) {
 
   return (
     <div className="Fiche">
-      <h1>{item.titre}</h1>
+      <div className="FicheTitre">
+        <h1>{item.titre}</h1>
+        <p>{item.description}</p>
+      </div>
     </div>
   );
 }

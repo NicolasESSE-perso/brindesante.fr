@@ -140,6 +140,27 @@ a:active {
   align-items: center;
 }
 
+.Fiche {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.FicheTitre {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f5f4f2;
+}
+
+.FicheTitre h1 {
+  font-size: 30px;
+  color: #6fa2a7;
+  height: 40px;
+}
+
+.FicheTitre p {
+  font-size: 16px;
+  color: #898a82;
+}
+
 @media screen and (max-width: 768px) {
   .App {
     min-width: 100%;
