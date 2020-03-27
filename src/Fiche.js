@@ -12,7 +12,7 @@ function Fiche({ match }) {
 
   const fetchItem = async () => {
     const fetchItem = await fetch(
-      `http://api.brindesante.fr/fiches/${match.params.id}`
+      `https://api.brindesante.fr/fiches/${match.params.id}`
     );
 
     //je convertis ce que je récupère en JSON pour obtenir un tabelau de fiches :)
