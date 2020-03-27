@@ -27,9 +27,11 @@ function Menu() {
     <div>
       <Link to="/">
         <Titre />
-        <LogoDelphine />
       </Link>
       <div className="Menu">
+        <Link to="/">
+          <LogoDelphine />
+        </Link>
         <GroupeFiches />
 
         <div>
