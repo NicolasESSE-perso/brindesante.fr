@@ -15,7 +15,7 @@ function Menu() {
   const [items, setItems] = useState([]);
 
   const fetchFiches = async () => {
-    const data = await fetch("http://api.brindesante.fr/fiches");
+    const data = await fetch("https://api.brindesante.fr/fiches");
 
     //je convertis ce que je récupère en JSON pour obtenir un tabelau de fiches :)
     const items = await data.json();
