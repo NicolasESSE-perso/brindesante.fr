@@ -1,27 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Titre from "./Titre";
 import LogoDelphine from "./LogoDelphine";
 import GroupeFiches from "./GroupeFiches";
 import Lienfiche from "./Lienfiche";
 import { Link } from "react-router-dom";
+import { ListeFichesContext } from ".././ListeFichesContext";
 
 function Menu() {
-  //Se lance uniquement quand le composant se mount à cause de []
-  //sinon on peut préciser les cas de figures
-  useEffect(() => {
-    fetchFiches();
-  }, []);
-
-  const [items, setItems] = useState([]);
-
-  const fetchFiches = async () => {
-    const data = await fetch("https://api.brindesante.fr/fiches");
-
-    //je convertis ce que je récupère en JSON pour obtenir un tabelau de fiches :)
-    const items = await data.json();
-    console.log(items);
-    setItems(items);
-  };
+  const [fiches] = useContext(ListeFichesContext);
 
   return (
     <div>
@@ -33,12 +19,13 @@ function Menu() {
           <LogoDelphine />
         </Link>
         <GroupeFiches />
-
         <div>
-          {items.map(item => (
-            <h1 key={item._id}>
-              <Lienfiche titre={item.titre} fiche_id={item._id} />
-            </h1>
+          {fiches.map((fiche) => (
+            <Lienfiche
+              titre={fiche.titre}
+              fiche_id={fiche._id}
+              key={fiche._id}
+            />
           ))}
         </div>
       </div>

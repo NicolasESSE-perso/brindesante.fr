@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 function Lienfiche(props) {
   return (
-    <div className="LienFiche">
-      <h1>
-        <Link to={`/fiche/${props.fiche_id}`}>{props.titre}</Link>
-      </h1>
-    </div>
+    <Link to={`/fiche/${props.fiche_id}`}>
+      <div className="LienFiche">
+        <h1>{props.titre}</h1>
+      </div>
+    </Link>
   );
 }
 

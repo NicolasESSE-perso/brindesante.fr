@@ -1,0 +1,134 @@
+.Background {
+  background: rgba(111, 162, 167, 0.8);
+  position: absolute;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.Feuille {
+  background: white;
+  margin: 30px auto;
+  width: 900px;
+  margin-bottom: 10px;
+  padding-bottom: 80px;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+textarea::placeholder {
+  color: #ccc;
+}
+
+.TitreBloc {
+  color: #6fa2a7;
+  width: 180px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.Entete {
+  display: flex;
+  background-color: #898a82;
+  height: 60px;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.Entete img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.BlocTitre {
+  display: flex;
+  margin: 30px 20px 20px 20px;
+  border-bottom: 1px solid #6fa2a7;
+  min-height: 120px;
+}
+
+.Photo {
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
+  background-color: lightgreen;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.BlocTitreData {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ChampTitre {
+  height: 40px;
+  font-size: 30px;
+  color: #6fa2a7;
+  font-weight: 700;
+  padding-left: 10px;
+  border: 1px dotted #ddd;
+}
+
+.ChampDescription {
+  height: 80px;
+  padding-left: 10px;
+  border: 1px dotted #ddd;
+  font-size: 16px;
+  color: #898a82;
+  padding-top: 10px;
+  resize: none;
+}
+
+.DateModification {
+  font-size: 13px;
+  color: #6fa2a7;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.BoutonEnregistrer {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1000;
+  height: 50px;
+  min-width: 180px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e8e098;
+  color: #666;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 2px 2px 16px rgba(151, 150, 150, 0.541);
+  margin-left: 35%;
+  margin-bottom: 30px;
+}
+
+.symptomes,
+.conseils,
+.allerMedecin,
+.autresConseils {
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Editor,
+.WrapperFiche {
+  width: 700px;
+}
