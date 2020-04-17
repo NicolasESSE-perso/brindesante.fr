@@ -1,0 +1,43 @@
+.DivSousTitre {
+  height: 50px;
+  width: 100%;
+  background-color: #f5f4f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.SousTitre {
+  font-size: 18px;
+  color: #898a82;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.DivSousTitre {
+  height: 50px;
+  width: 100%;
+  background-color: #f5f4f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.HomePage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px 20px 20px 30px;
+  justify-content: space-between;
+}
+
+.Phrase {
+  font-family: "Pacifico", cursive;
+  color: #6fa2a7;
+  font-size: 22px;
+  max-width: 70%;
+  margin-bottom: 40px;
+}

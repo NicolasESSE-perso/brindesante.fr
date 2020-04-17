@@ -116,22 +116,6 @@ a:active {
   color: #6fa2a7;
 }
 
-.HomePage {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 30px 20px 20px 30px;
-  justify-content: space-between;
-}
-
-.HomePage h1 {
-  font-family: "Pacifico", cursive;
-  color: #6fa2a7;
-  font-size: 22px;
-  max-width: 70%;
-  margin-bottom: 40px;
-}
-
 .Entete {
   display: flex;
   align-items: center;
