@@ -5,6 +5,7 @@ import GroupeFiches from "./GroupeFiches";
 import Lienfiche from "./Lienfiche";
 import { Link } from "react-router-dom";
 import { ListeFichesContext } from ".././ListeFichesContext";
+import Style from "./Menu.module.css";
 
 function Menu() {
   const [fiches] = useContext(ListeFichesContext);
@@ -14,7 +15,7 @@ function Menu() {
       <Link to="/">
         <Titre />
       </Link>
-      <div className="Menu">
+      <div className={Style.Menu}>
         <Link to="/">
           <LogoDelphine />
         </Link>

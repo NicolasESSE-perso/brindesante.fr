@@ -4,7 +4,7 @@ import "./App.css";
 import Menu from "./Menu/Menu";
 import Entete from "./Entete";
 import Apropos from "./Apropos";
-import Recherche from "./Recherche";
+import Recherche from "./Recherche/Recherche";
 import Fiche from "./Fiche/Fiche";
 import Homepage from "./Homepage";
 import Menupage from "./Menupage";

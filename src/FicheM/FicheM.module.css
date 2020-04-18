@@ -1,21 +1,18 @@
 .FicheM {
-  min-width: 320px;
-  max-width: 49%;
-  height: 150px;
-  margin-bottom: 20px;
-  padding: 20px 20px 20px 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .FicheM:hover {
   background-color: #f5f4f2;
+  border-radius: 4px;
 }
 
 .Titre {
   font-weight: 900;
   font-size: 18px;
   color: #6fa2a7;
-  height: 20px;
-  margin-bottom: 5px;
 }
 
 .Texte {
@@ -23,10 +20,8 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 7 0px;
   font-size: 15px;
   color: #898a82;
 }
@@ -34,4 +29,8 @@
 .LireFiche {
   font-size: 15px;
   color: #6fa2a7;
+}
+
+.LireFiche:hover {
+  text-decoration: underline;
 }

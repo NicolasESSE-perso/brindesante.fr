@@ -17,13 +17,15 @@ function Homepage() {
         <p className={Style.SousTitre}>Symptomes les plus fréquents</p>
       </div>
       {fiches.map((fiche) => (
-        <FicheM
-          titre={fiche.titre}
-          fiche_id={fiche._id}
-          key={fiche._id}
-          description={fiche.description}
-          date_modif={fiche.date_modif}
-        />
+        <div className={Style.Suggestions}>
+          <FicheM
+            titre={fiche.titre}
+            fiche_id={fiche._id}
+            key={fiche._id}
+            description={fiche.description}
+            date_modif={fiche.date_modif}
+          />
+        </div>
       ))}
     </div>
   );

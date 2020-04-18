@@ -1,0 +1,27 @@
+.LienFiche {
+  background-color: #c4e3e6;
+  height: 50px;
+  width: 240px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.LienFiche:hover {
+  background-color: #e8e098;
+  font-weight: 700;
+}
+
+.LienFiche h1 {
+  font-size: 16px;
+}
+
+.Link a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #333;
+}

@@ -1,11 +1,8 @@
 import React from "react";
+import Style from "./GroupeFiches.module.css";
 
 function GroupeFiches() {
-  return (
-    <div className="GroupeFiches">
-      <h1>SYMPTOMES</h1>
-    </div>
-  );
+  return <div className={Style.TitreGroupe}>SYMPTOMES</div>;
 }
 
 export default GroupeFiches;

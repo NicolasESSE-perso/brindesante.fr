@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Style from "./LienFiche.module.css";
 
 function Lienfiche(props) {
   return (
-    <Link to={`/fiche/${props.fiche_id}`}>
-      <div className="LienFiche">
-        <h1>{props.titre}</h1>
-      </div>
-    </Link>
+    <div className={Style.Link}>
+      <Link to={`/fiche/${props.fiche_id}`}>
+        <div className={Style.LienFiche}>
+          <p>{props.titre}</p>
+        </div>
+      </Link>
+    </div>
   );
 }
 
