@@ -24,23 +24,3 @@
   color: #6fa2a7;
   text-decoration: underline;
 }
-
-.BoutonAjouter {
-  display: flex;
-  height: 40px;
-  background-color: #e8e098;
-  width: 190px;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 20px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.411);
-  padding-left: 5px;
-}
-
-.BoutonAjouter:hover {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.411);
-}
-
-.BoutonAjouter:active {
-  box-shadow: none;
-}

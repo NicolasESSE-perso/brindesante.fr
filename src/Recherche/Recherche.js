@@ -67,11 +67,11 @@ function Recherche() {
         <input
           className={Style.ChampRecherche}
           name="ChampRecherche"
+          id="ChampRecherche"
           type="text"
           placeholder="ex: Fièvre, boutons ..."
           value={texteRecherche}
           onChange={updateTexteRecherche}
-          autofocus
         />
       </form>
       <div>

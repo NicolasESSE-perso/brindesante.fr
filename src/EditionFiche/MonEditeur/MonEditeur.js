@@ -28,13 +28,13 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
     } else {
       //console.log(false);
     }
+    //NIE c'est volontaire alors je ne veux pas afficher l'avertissement en dessous
     // eslint-disable-next-line
   }, [textHtml]);
 
   //NIE quand on change le texte dans mon éditeur
   const onEditorChange = (value) => {
     //console.log({ editorState: editorState.getCurrentContent().hasText() });
-
     setEditorState(value);
 
     //NIE je retourne le texte.
