@@ -6,7 +6,7 @@ import { sha256 } from "js-sha256";
 import MessageErreur from "./MessageErreur";
 import { DelphineContext } from "../DelphineContext";
 
-function Login({ onConnect }) {
+function Login({ onConnect, onClose }) {
   // eslint-disable-next-line
   const [delphine, setDelphine] = useContext(DelphineContext);
   const [MotDePasse, setMotDePasse] = useState("");
@@ -22,18 +22,24 @@ function Login({ onConnect }) {
       //NIE je stocke le fait que l'on est connecté
       setDelphine("Connectée");
       //NIE je retourne que je suis connecté
+      onConnect();
     } else {
       setMessage("Mot de passe faux");
     }
   };
 
+  const FermerPopUp = (e) => {
+    if (e.target.id === "FondNoir") {
+      onClose();
+    }
+  };
+
   return (
-    <div className={Style.PageLogin}>
+    <div className={Style.PageLogin} onClick={FermerPopUp} id="FondNoir">
       <div
         className={Style.PopUp}
         style={{ backgroundImage: `url(${ImageConnexion})` }}
       >
-        <p className={Style.Titre}></p>
         <img src={LogoDelphine} alt="logo" className={Style.Logo} />
         <form className={Style.MonFormulaire} onSubmit={onSubmit}>
           <input
