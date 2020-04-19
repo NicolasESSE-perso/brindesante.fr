@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Style from "./Recherche.module.css";
 import { ListeFichesContext } from "../ListeFichesContext";
 import NombreDeResultat from "./NombreDeResultat";
-import iconeLoupe from "../icones/Loupe.svg";
 import FicheM from "../FicheM/FicheM";
 
 function Recherche() {

@@ -28,6 +28,7 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
     } else {
       //console.log(false);
     }
+    // eslint-disable-next-line
   }, [textHtml]);
 
   //NIE quand on change le texte dans mon éditeur
