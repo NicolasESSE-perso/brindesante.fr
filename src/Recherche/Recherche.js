@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Style from "./Recherche.module.css";
 import { ListeFichesContext } from "../ListeFichesContext";
 import NombreDeResultat from "./NombreDeResultat";
-import iconeLoupe from "../icones/Loupe.svg";
 import FicheM from "../FicheM/FicheM";
 
 function Recherche() {
@@ -68,11 +67,11 @@ function Recherche() {
         <input
           className={Style.ChampRecherche}
           name="ChampRecherche"
+          id="ChampRecherche"
           type="text"
           placeholder="ex: Fièvre, boutons ..."
           value={texteRecherche}
           onChange={updateTexteRecherche}
-          autofocus
         />
       </form>
       <div>
