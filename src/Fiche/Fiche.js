@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Style from "./Fiche.module.css";
 import EditionFiche from "../EditionFiche/EditionFiche";
 import Article from "./Article";
+import { DelphineContext } from "../DelphineContext";
+import BoutonModifier from "../Boutons/BoutonModifier";
 
 function Fiche({ match }) {
   //NIE pour afficher le composant de modification
+  const [isConnected] = useContext(DelphineContext);
   const [popupModification, setPopupModification] = useState();
+
+  //NIE mes données
   const [symptomes, setSymptomes] = useState("");
   const [dateModif, setDateModif] = useState();
   const [maFiche, setFiche] = useState({});
@@ -89,9 +94,11 @@ function Fiche({ match }) {
       <div className={Style.Titre}>
         <div className={Style.BarreAction}>
           <h1>{maFiche.titre_fiche}</h1>
-          <div className={Style.BoutonModifier} onClick={afficherPopup}>
-            Modifier
-          </div>
+          {isConnected ? (
+            <BoutonModifier texte="Modifier" onClick={afficherPopup} />
+          ) : (
+            ""
+          )}
         </div>
         <p className={Style.Description}>{maFiche.description}</p>
         <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
