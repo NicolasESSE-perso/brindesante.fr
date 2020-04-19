@@ -1,0 +1,15 @@
+.MessageErreur {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 300px;
+  height: 50px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Erreur {
+  color: #d50a0a;
+  font-size: 16px;
+  font-style: italic;
+}
