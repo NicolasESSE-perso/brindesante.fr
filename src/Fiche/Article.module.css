@@ -1,14 +1,13 @@
 .article {
   margin-top: 20px;
-  padding-right: 10px;
+  margin-bottom: 20px;
 }
 
 .titre {
-  height: 30px;
   font-size: 24px;
   color: #6fa2a7;
   font-weight: 700;
-  margin: 10px 0px 10px 0px;
+  margin-bottom: 5px;
 }
 
 .texte {

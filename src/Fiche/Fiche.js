@@ -4,6 +4,7 @@ import EditionFiche from "../EditionFiche/EditionFiche";
 import Article from "./Article";
 import { DelphineContext } from "../DelphineContext";
 import BoutonModifier from "../Boutons/BoutonModifier";
+import Symptomes from "./Symptomes";
 
 function Fiche({ match }) {
   //NIE pour afficher le composant de modification
@@ -103,34 +104,33 @@ function Fiche({ match }) {
         <p className={Style.Description}>{maFiche.description}</p>
         <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
       </div>
-      <div className={Style.Symptomes}>
-        <div>
-          <h2>Symptômes</h2>
-        </div>
-        <div
-          className={Style.SymptomesData}
-          dangerouslySetInnerHTML={ToHtml(symptomes)}
-        ></div>
+
+      <div>
+        <Symptomes texteHtml={symptomes} />
       </div>
 
       <div className={Style.FicheWrapper}>
         <div className={Style.Conseil}>
-          <h2>Que faire?</h2>
+          <h1>Que faire?</h1>
           <p dangerouslySetInnerHTML={ToHtml(maFiche.conseils)}></p>
         </div>
         <div className={Style.AllezMedecin}>
-          <h2>Je vais chez le médecin si :</h2>
+          <h1>Je vais chez le médecin si :</h1>
           <p
             dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
           ></p>
         </div>
+      </div>
 
+      <div className={Style.Articles}>
         {articles.map((article) => (
-          <Article
-            titre={article.titre}
-            texte={article.texte}
-            key={article._id}
-          />
+          <div className={Style.Article}>
+            <Article
+              titre={article.titre}
+              texte={article.texte}
+              key={article._id}
+            />
+          </div>
         ))}
       </div>
     </div>

@@ -24,3 +24,9 @@
   color: #6fa2a7;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+  .Entete {
+    display: none;
+  }
+}

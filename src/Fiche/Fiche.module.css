@@ -4,13 +4,14 @@
   flex-direction: column;
 }
 
-.Titre,
-.Symptomes {
+.Titre {
   padding-bottom: 20px;
   border-bottom: 1px solid #f5f4f2;
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Titre h1 {
@@ -21,12 +22,13 @@
 }
 
 .Description {
+  width: 70%;
   font-size: 16px;
   color: #333;
 }
 
 .DateModification {
-  font-size: 12px;
+  font-size: 15px;
   color: #97989d;
   padding-left: 0px;
   padding-top: 10px;
@@ -34,7 +36,7 @@
 }
 
 .BarreAction {
-  height: 50px;
+  min-height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -42,68 +44,47 @@
   padding-right: 60px;
 }
 
-.Symptomes {
-  display: flex;
-  flex-direction: row;
-}
-
-.Symptomes h2 {
-  padding-right: 50px;
-  font-weight: 700;
-  color: #6fa2a7;
-}
-
-.SymptomesData {
-  padding-top: 0px;
-  color: #6fa2a7;
-  width: 80%;
-}
-
-.Symptomes p {
-  padding-top: 6px;
-  color: #6fa2a7;
-  width: 80%;
-}
-
 .FicheWrapper {
   width: 100%;
   margin-top: 10px;
-  display: grid;
-  grid-template-columns: 49% 49%;
+  display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .Conseil {
+  min-width: 350px;
+  max-width: 49%;
   padding: 20px 20px 20px 20px;
   background-color: #e8e098;
 }
 
-.Conseil h2 {
-  font-size: 24px;
+.Conseil h1 {
+  font-size: 28px;
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .AllezMedecin {
+  min-width: 350px;
+  width: 49%;
   padding: 20px 20px 20px 20px;
   background-color: #f5f4f2;
-  color: #898a82;
-}
-.AllezMedecin h2 {
-  font-size: 24px;
-  height: 30px;
-  margin-bottom: 20px;
   color: #333;
+}
+.AllezMedecin h1 {
+  font-size: 28px;
+  height: 30px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.Articles {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .Article {
-  margin-top: 20px;
-  padding: 20px 20px 20px 20px;
-  color: #333;
-}
-
-.Article h2 {
-  font-size: 24px;
-  height: 30px;
-  margin-bottom: 20px;
-  color: #6fa2a7;
+  margin-bottom: 30px;
 }

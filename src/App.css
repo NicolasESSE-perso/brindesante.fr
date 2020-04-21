@@ -38,17 +38,6 @@ a:active {
   color: white;
 }
 
-.Logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #6fa2a7;
-}
-
-.Logo img {
-  width: 100px;
-}
-
 .Apropos {
   display: flex;
   align-items: center;
