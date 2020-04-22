@@ -1,5 +1,5 @@
 .App {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   font-family: "Lato", sans-serif;
 }
@@ -18,26 +18,6 @@ a:active {
   margin: 0px 20px 0px 20px;
 }
 
-.Titre {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 280px;
-  padding: 20px 0px 20px 0px;
-  background-color: #6fa2a7;
-}
-
-.Titre img {
-  width: 230px;
-  height: 40px;
-}
-
-.Titre p {
-  font-size: 13px;
-  text-align: center;
-  color: white;
-}
-
 .Apropos {
   display: flex;
   align-items: center;
@@ -54,34 +34,8 @@ a:active {
     display: flexbox;
   }
 
-  .Titre {
-    min-width: 100%;
-  }
-
-  .Entete {
-    background-color: lightsalmon;
-    display: none;
-  }
-
   .Page {
     margin: 0px 0px 0px 0px;
-  }
-
-  .Nav-link {
-    display: none;
-  }
-
-  .homePage {
-    width: 100%;
-  }
-
-  .HomePage h1 {
-    font-family: "Pacifico", cursive;
-    background-color: #6fa2a7;
-    color: white;
-    font-size: 18px;
-    min-width: 100%;
-    padding: 30px 20px 20px 30px;
   }
 
   .Fiche {

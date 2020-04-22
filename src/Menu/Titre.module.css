@@ -1,0 +1,63 @@
+.Titre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+  min-width: 100%;
+}
+
+.TitreEtMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.MenuMobile {
+  display: none;
+}
+
+.RechercheMobile {
+  display: none;
+}
+
+.ImageTitre {
+  min-width: 200px;
+  height: 40px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.ImageTitre img {
+  width: 100%;
+}
+
+.Titre p {
+  font-size: 13px;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .MenuMobile {
+    display: inline-block;
+    height: 40px;
+    max-width: 40px;
+  }
+
+  .ImageTitre {
+    min-width: 190px;
+    height: 50px;
+  }
+
+  .RechercheMobile {
+    display: flex;
+    max-width: 40px;
+    height: 40px;
+  }
+}

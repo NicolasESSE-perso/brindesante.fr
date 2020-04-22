@@ -1,34 +1,23 @@
-import React, { useContext } from "react";
+import React from "react";
 import Titre from "./Titre";
 import LogoDelphine from "./LogoDelphine";
 import GroupeFiches from "./GroupeFiches";
-import Lienfiche from "./Lienfiche";
 import { Link } from "react-router-dom";
-import { ListeFichesContext } from ".././ListeFichesContext";
 import Style from "./Menu.module.css";
 
 function Menu() {
-  const [fiches] = useContext(ListeFichesContext);
-
   return (
-    <div>
-      <Link to="/">
+    <div className={Style.Menu}>
+      <div className={Style.Titre}>
         <Titre />
-      </Link>
-      <div className={Style.Menu}>
+      </div>
+      <div className={Style.Logo}>
         <Link to="/">
           <LogoDelphine />
         </Link>
+      </div>
+      <div className={Style.LiensFiches}>
         <GroupeFiches />
-        <div>
-          {fiches.map((fiche) => (
-            <Lienfiche
-              titre={fiche.titre}
-              fiche_id={fiche._id}
-              key={fiche._id}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );

@@ -59,4 +59,9 @@
   .LogoMobile {
     display: inline;
   }
+
+  .Suggestions {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
 }

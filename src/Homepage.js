@@ -22,7 +22,7 @@ function Homepage() {
           <p className={Style.SousTitre}>Symptomes les plus fréquents</p>
         </div>
         {fiches.map((fiche) => (
-          <div className={Style.Suggestions}>
+          <div className={Style.Suggestions} key={fiche._id}>
             <FicheM
               titre={fiche.titre}
               fiche_id={fiche._id}

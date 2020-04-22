@@ -13,6 +13,7 @@ import EditionFiche from "./EditionFiche/EditionFiche";
 import MonEditeur from "./EditionFiche/MonEditeur/MonEditeur";
 import Login from "./Login/Login";
 import { DelphineProvider } from "./DelphineContext";
+import MenuMobile from "./Menu/Mobile/MenuMobile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="/dev" component={EditionFiche} />
               <Route path="/monediteur" component={MonEditeur} />
               <Route path="/Login" component={Login} />
+              <Route path="/MenuMobile" component={MenuMobile} />
             </div>
           </div>
         </DelphineProvider>

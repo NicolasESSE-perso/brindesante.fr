@@ -1,3 +1,10 @@
+.GroupeFiches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .TitreGroupe {
   font-size: 13px;
   color: white;
