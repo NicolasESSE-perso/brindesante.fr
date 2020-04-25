@@ -7,8 +7,7 @@ function Symptomes({ texteHtml }) {
     return { __html: data };
   };
 
-  console.log(texteHtml);
-  if (texteHtml !== "<p><br></p>") {
+  if (texteHtml !== "<p><br></p>" && texteHtml) {
     return (
       <div>
         <div className={Style.Symptomes}>

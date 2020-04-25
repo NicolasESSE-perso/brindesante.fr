@@ -5,6 +5,7 @@ import Article from "./Article";
 import { DelphineContext } from "../DelphineContext";
 import BoutonModifier from "../Boutons/BoutonModifier";
 import Symptomes from "./Symptomes";
+import Illustrations from "../Images/Illustrations";
 
 function Fiche({ match }) {
   //NIE pour afficher le composant de modification
@@ -92,17 +93,24 @@ function Fiche({ match }) {
   return (
     <div className={Style.Fiche}>
       {popupModification}
-      <div className={Style.Titre}>
-        <div className={Style.BarreAction}>
-          <h1>{maFiche.titre_fiche}</h1>
-          {isConnected ? (
-            <BoutonModifier texte="Modifier" onClick={afficherPopup} />
-          ) : (
-            ""
-          )}
+
+      <div className={Style.EnteteFiche}>
+        <div className={Style.Illustration}>
+          <Illustrations monUrl={maFiche.image_url} />
         </div>
-        <p className={Style.Description}>{maFiche.description}</p>
-        <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
+
+        <div className={Style.Titre}>
+          <div className={Style.BarreAction}>
+            <h1>{maFiche.titre_fiche}</h1>
+            {isConnected ? (
+              <BoutonModifier texte="Modifier" onClick={afficherPopup} />
+            ) : (
+              ""
+            )}
+          </div>
+          <p className={Style.Description}>{maFiche.description}</p>
+          <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
+        </div>
       </div>
 
       <div>

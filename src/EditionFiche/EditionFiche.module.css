@@ -58,7 +58,6 @@ textarea::placeholder {
   min-width: 100px;
   max-width: 100px;
   height: 100px;
-  background-color: lightgreen;
   margin-left: 20px;
   margin-right: 20px;
 }

@@ -3,6 +3,15 @@
   display: flex;
   flex-direction: column;
 }
+.EnteteFiche {
+  display: flex;
+  flex-direction: row;
+}
+
+.Illustration {
+  max-width: 100px;
+  min-width: 100px;
+}
 
 .Titre {
   padding-bottom: 20px;

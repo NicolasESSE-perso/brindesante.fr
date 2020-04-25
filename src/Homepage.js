@@ -29,6 +29,7 @@ function Homepage() {
               key={fiche._id}
               description={fiche.description}
               date_modif={fiche.date_modif}
+              image_url={fiche.image_url}
             />
           </div>
         ))}
