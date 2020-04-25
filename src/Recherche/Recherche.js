@@ -91,6 +91,7 @@ function Recherche() {
               description={fiche.description}
               date_modif={fiche.date_modif}
               texteRecherche={texteRecherche}
+              image_url={fiche.image_url}
             />
           </div>
         ))}

@@ -6,6 +6,7 @@ import ImageExemple from "../icones/Exemple.png";
 import EditionBouton from "./EditionBouton";
 import EditionListeArticle from "./Articles/EditionListeArticles";
 import MonEditeur from "./MonEditeur/MonEditeur";
+import EditionIllustrations from "../Images/EditionIllustrations";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
@@ -17,6 +18,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [conseils, setConseils] = useState("");
   const [allerMedecin, setAllerMedecin] = useState("");
   const [articles, setArticles] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
 
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
@@ -67,6 +69,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setConseils(maFiche.conseils);
     setAllerMedecin(maFiche.aller_chez_le_medecin);
     setArticles(maFiche.articles);
+    setImageUrl(maFiche.image_url);
   };
 
   //NIE Action sur ma popup
@@ -130,6 +133,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         conseils: conseils,
         aller_chez_le_medecin: allerMedecin,
         articles: articles,
+        image_url: imageUrl,
       }),
     });
   };
@@ -144,7 +148,14 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         </div>
         <form onSubmit={actionSauvegarde}>
           <div className={Style.BlocTitre}>
-            <img className={Style.Photo} src={ImageExemple} alt=" " />
+            <div className={Style.Photo}>
+              {" "}
+              <EditionIllustrations
+                imageUrl={imageUrl}
+                onChange={(newUrl) => setImageUrl(newUrl)}
+              />
+            </div>
+
             <div className={Style.BlocTitreData}>
               <input
                 className={Style.ChampTitre}

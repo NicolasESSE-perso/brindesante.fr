@@ -1,12 +1,21 @@
 .FicheM {
   padding: 10px;
-  display: flex;
-  flex-direction: column;
 }
 
 .FicheM:hover {
   background-color: #f5f4f2;
   border-radius: 4px;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.Illustration {
+  min-width: 40px;
+  max-width: 40px;
+  margin-right: 10px;
 }
 
 .Titre {
