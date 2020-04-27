@@ -25,3 +25,24 @@
   color: #6fa2a7;
   width: 80%;
 }
+
+@media screen and (max-width: 768px) {
+  .Symptomes {
+    flex-direction: column;
+    padding-left: ;
+  }
+  .Titre {
+    font-weight: 700;
+    color: #6fa2a7;
+    margin-bottom: 10px;
+  }
+
+  .SymptomesData {
+    padding-top: 0px;
+    color: #6fa2a7;
+    width: 100%;
+  }
+  .Symptomes p {
+    width: 100%;
+  }
+}

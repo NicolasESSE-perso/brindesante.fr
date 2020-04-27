@@ -14,14 +14,7 @@
   font-weight: 700;
 }
 
-.LienFiche h1 {
+.LienFiche p {
   font-size: 16px;
-}
-
-.Link a,
-a:hover,
-a:visited,
-a:active {
-  text-decoration: none;
   color: #333;
 }

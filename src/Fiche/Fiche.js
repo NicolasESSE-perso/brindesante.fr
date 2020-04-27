@@ -94,20 +94,21 @@ function Fiche({ match }) {
     <div className={Style.Fiche}>
       {popupModification}
 
+      <div className={Style.BarreAction}>
+        {isConnected ? (
+          <BoutonModifier texte="Modifier" onClick={afficherPopup} />
+        ) : (
+          ""
+        )}
+      </div>
+
       <div className={Style.EnteteFiche}>
         <div className={Style.Illustration}>
           <Illustrations monUrl={maFiche.image_url} />
         </div>
 
         <div className={Style.Titre}>
-          <div className={Style.BarreAction}>
-            <h1>{maFiche.titre_fiche}</h1>
-            {isConnected ? (
-              <BoutonModifier texte="Modifier" onClick={afficherPopup} />
-            ) : (
-              ""
-            )}
-          </div>
+          <h1>{maFiche.titre_fiche}</h1>
           <p className={Style.Description}>{maFiche.description}</p>
           <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
         </div>
@@ -132,7 +133,7 @@ function Fiche({ match }) {
 
       <div className={Style.Articles}>
         {articles.map((article) => (
-          <div className={Style.Article}>
+          <div className={Style.Article} key={article._id}>
             <Article
               titre={article.titre}
               texte={article.texte}
