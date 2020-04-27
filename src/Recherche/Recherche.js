@@ -6,7 +6,8 @@ import FicheM from "../FicheM/FicheM";
 
 function Recherche() {
   const [texteRecherche, setTexteRecherche] = useState("");
-  const [fiches] = useContext(ListeFichesContext);
+  const contexte = useContext(ListeFichesContext);
+  const fiches = contexte.fiches;
   const [resultats, setResultats] = useState([]);
 
   //NIE au debut on affiche tout
@@ -57,6 +58,8 @@ function Recherche() {
 
   const updateTexteRecherche = (event) => {
     setTexteRecherche(event.target.value);
+
+    console.log(event.target.value);
     rechercheFiches(event.target.value);
   };
 
@@ -83,7 +86,7 @@ function Recherche() {
       </div>
       <div className={Style.Liste}>
         {resultats.map((fiche) => (
-          <div className={Style.Resultat}>
+          <div className={Style.Resultat} key={fiche._id}>
             <FicheM
               titre={fiche.titre}
               fiche_id={fiche._id}

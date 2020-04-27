@@ -39,11 +39,6 @@
   margin-bottom: 20px;
 }
 
-.Login {
-  display: flex;
-  align-items: center;
-}
-
 @media screen and (max-width: 768px) {
   .Apropos {
     display: flex;
