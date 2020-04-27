@@ -42,7 +42,9 @@ function Apropos() {
       <div className={Style.Login}></div>
 
       <div className={Style.Footer}>
-        <a href={"mailto:" + email}>Me contacter</a>
+        <a href={"mailto:" + email} style={{ color: "#333" }}>
+          Me contacter
+        </a>
         <div
           className={Style.Connexion}
           onClick={(e) => setAfficherConnexion(true)}

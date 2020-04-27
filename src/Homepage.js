@@ -39,6 +39,7 @@ function Homepage() {
 
   useEffect(() => {
     filtrerFiches();
+    // eslint-disable-next-line
   }, [fiches]);
 
   const afficherTout = () => {

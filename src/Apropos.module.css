@@ -39,12 +39,6 @@
   margin-bottom: 20px;
 }
 
-.Apropos a,
-a:hover,
-a:visited {
-  color: #333;
-}
-
 .Login {
   display: flex;
   align-items: center;
