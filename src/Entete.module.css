@@ -15,8 +15,10 @@
   width: 30%;
   height: 40px;
   justify-content: flex-end;
+  color: #6fa2a7;
 }
-.NavLink a:visited {
+.NavLink a,
+a:visited {
   color: #6fa2a7;
 }
 

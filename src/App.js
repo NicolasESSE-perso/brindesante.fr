@@ -9,12 +9,10 @@ import Fiche from "./Fiche/Fiche";
 import Homepage from "./Homepage";
 import Menupage from "./Menupage";
 import { FichesProvider } from "./ListeFichesContext";
-
 import Login from "./Login/Login";
 import { DelphineProvider } from "./DelphineContext";
 import MenuMobile from "./Menu/Mobile/MenuMobile";
-import EditionIllustration from "./Images/EditionIllustrations";
-import Illustrations from "./Images/Illustrations";
+import EditionFiche from "./EditionFiche/EditionFiche";
 
 function App() {
   return (
@@ -30,10 +28,9 @@ function App() {
               <Route path="/" exact component={Homepage} />
               <Route path="/Menu" component={Menupage} />
               <Route path="/Recherche" component={Recherche} />
-              <Route path="/dev" component={EditionIllustration} />
+              <Route path="/dev" component={EditionFiche} />
               <Route path="/Login" component={Login} />
               <Route path="/MenuMobile" component={MenuMobile} />
-              <Route path="/Illustrations" component={Illustrations} />
             </div>
           </div>
         </DelphineProvider>

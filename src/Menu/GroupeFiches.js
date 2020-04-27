@@ -4,7 +4,9 @@ import { ListeFichesContext } from ".././ListeFichesContext";
 import Lienfiche from "./Lienfiche";
 
 function GroupeFiches() {
-  const [fiches] = useContext(ListeFichesContext);
+  const contexte = useContext(ListeFichesContext);
+
+  const fiches = contexte.fiches;
 
   return (
     <div className={Style.GroupeFiches}>

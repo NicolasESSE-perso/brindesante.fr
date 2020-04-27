@@ -7,8 +7,10 @@ export const FichesProvider = (props) => {
 
   //NIE je créé un tableau vide que va contenir les fiches.
   const [fiches, setFiches] = useState([]);
-  useEffect(() => {
-    //NIE si je déclare en dehors du useEffect j'ai des erreurs
+
+  //NIE fonction pour récupérer mes données de l'API
+
+  const getFiches = () => {
     const fetchData = async () => {
       //NIE je récupère les data depuis l'API
       const data = await fetch(
@@ -25,18 +27,23 @@ export const FichesProvider = (props) => {
         reponse: fichesJson,
       });
 
-      //NIE je trie par ordre alphabétique
-
       //NIE j'enregistre les fiches dans la constante créée
       setFiches(fichesJson);
     };
-
     //NIE j'utilise la fonction pour récupérer mes données
     fetchData();
-  }, [monUrlAPI]);
+  };
+
+  useEffect(() => {
+    getFiches();
+    //NIE si je déclare en dehors du useEffect j'ai des erreurs
+    // eslint-disable-next-line
+  }, []);
 
   return (
-    <ListeFichesContext.Provider value={[fiches, setFiches]}>
+    <ListeFichesContext.Provider
+      value={{ fiches: fiches, getFiches: getFiches }}
+    >
       {props.children}
     </ListeFichesContext.Provider>
   );

@@ -1,0 +1,16 @@
+.CheckBoxAccueil {
+  height: 50px;
+  width: 240px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.CheckBoxAccueil:hover {
+  background-color: #ededed;
+  border-radius: 6px;
+}
+
+.Label {
+  margin-left: 10px;
+}

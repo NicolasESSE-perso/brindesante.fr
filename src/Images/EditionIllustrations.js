@@ -34,6 +34,7 @@ function EditionIllustration({ imageUrl, onChange }) {
         onChange(res.data.url);
       });
     }
+    // eslint-disable-next-line
   }, [fichier]);
 
   //NIE Sélection de l'image

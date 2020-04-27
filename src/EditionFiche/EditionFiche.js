@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Style from "./EditionFiche.module.css";
 import IconeFermer from "../icones/Fermer.svg";
-import ImageExemple from "../icones/Exemple.png";
-//import Editor from "./Editor";
 import EditionBouton from "./EditionBouton";
 import EditionListeArticle from "./Articles/EditionListeArticles";
 import MonEditeur from "./MonEditeur/MonEditeur";
 import EditionIllustrations from "../Images/EditionIllustrations";
+import CheckboxAccueil from "./CheckboxAccueil";
+import { ListeFichesContext } from "../ListeFichesContext";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
+  const contexte = useContext(ListeFichesContext);
   const [titreBouton, setTitreBouton] = useState("");
   const [titreFiche, setTitreFiche] = useState("");
   const [description, setDescription] = useState("");
@@ -19,6 +20,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [allerMedecin, setAllerMedecin] = useState("");
   const [articles, setArticles] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
+  const [afficherEnPageAccueil, setAfficherEnPageAccueil] = useState(false);
 
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
@@ -70,6 +72,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setAllerMedecin(maFiche.aller_chez_le_medecin);
     setArticles(maFiche.articles);
     setImageUrl(maFiche.image_url);
+    setAfficherEnPageAccueil(maFiche.afficher_en_page_accueil);
   };
 
   //NIE Action sur ma popup
@@ -134,8 +137,12 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         aller_chez_le_medecin: allerMedecin,
         articles: articles,
         image_url: imageUrl,
+        afficher_en_page_accueil: afficherEnPageAccueil,
       }),
     });
+    //NIE je force le contexte à se reload
+    //setFiches([]);
+    contexte.getFiches();
   };
 
   return (
@@ -180,6 +187,12 @@ function EditionFiche({ ficheId, onClose, onSave }) {
                 <EditionBouton
                   texte={titreBouton}
                   onTexteChange={onTitreBoutonChange}
+                />
+              </div>
+              <div>
+                <CheckboxAccueil
+                  checked={afficherEnPageAccueil}
+                  onChange={(value) => setAfficherEnPageAccueil(value)}
                 />
               </div>
             </div>
