@@ -1,17 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Menu from "./Menu/Menu";
-import Entete from "./Entete";
-import Apropos from "./Apropos";
-import Recherche from "./Recherche/Recherche";
-import Fiche from "./Fiche/Fiche";
-import Homepage from "./Homepage";
-import Menupage from "./Menupage";
-import { FichesProvider } from "./ListeFichesContext";
-import Login from "./Login/Login";
-import { DelphineProvider } from "./DelphineContext";
-import MenuMobile from "./Menu/Mobile/MenuMobile";
+import Menu from "./Components/Menu/Menu";
+import Entete from "./Components/Entete/Entete";
+import Apropos from "./Pages/Apropos";
+import Recherche from "./Pages/Recherche";
+import Fiche from "./Pages/Fiche";
+import Homepage from "./Pages/Homepage";
+import { FichesProvider } from "./Context/ListeFichesContext";
+import Login from "./Components/Login/Login";
+import { DelphineProvider } from "./Context/DelphineContext";
+import MenuMobile from "./Pages/Mobile/MenuMobile";
 import EditionFiche from "./EditionFiche/EditionFiche";
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
               <Route path="/Apropos" component={Apropos} />
               <Route path="/Fiche/:id" component={Fiche} />
               <Route path="/" exact component={Homepage} />
-              <Route path="/Menu" component={Menupage} />
               <Route path="/Recherche" component={Recherche} />
               <Route path="/dev" component={EditionFiche} />
               <Route path="/Login" component={Login} />

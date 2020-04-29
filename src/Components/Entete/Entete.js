@@ -1,10 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./App.css";
 import { Link } from "react-router-dom";
-import EditionFiche from "./EditionFiche/EditionFiche";
+import EditionFiche from "../../EditionFiche/EditionFiche";
 import Style from "./Entete.module.css";
-import { DelphineContext } from "./DelphineContext";
-import BoutonAjouter from "./Boutons/BoutonAjouter";
+import { DelphineContext } from "../../Context/DelphineContext";
+import BoutonAjouter from "../../Components/Boutons/BoutonAjouter";
 
 function Entete() {
   //NIE est ce que Delphine est connecté?

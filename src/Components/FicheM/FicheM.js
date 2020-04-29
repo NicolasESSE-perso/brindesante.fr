@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Style from "./FicheM.module.css";
-import Illustrations from "../Images/Illustrations";
+import Illustrations from "../../Images/Illustrations";
 
 function FicheM({ titre, description, date_modif, fiche_id, image_url }) {
   //commentaire

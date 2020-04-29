@@ -1,5 +1,5 @@
 import React from "react";
-import IconeAjouter from "../icones/Ajouter.svg";
+import IconeAjouter from "../../Images/icones/Ajouter.svg";
 import Style from "./BoutonAjouter.module.css";
 
 function BoutonAjouter({ texte, onClick }) {

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Style from "./GroupeFiches.module.css";
-import { ListeFichesContext } from ".././ListeFichesContext";
+import { ListeFichesContext } from "../../Context/ListeFichesContext";
 import Lienfiche from "./Lienfiche";
 
 function GroupeFiches() {

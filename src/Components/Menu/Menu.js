@@ -1,7 +1,7 @@
 import React from "react";
-import Titre from "./Titre";
-import LogoDelphine from "./LogoDelphine";
-import GroupeFiches from "./GroupeFiches";
+import Titre from "../Menu/Titre";
+import LogoDelphine from "../Menu/LogoDelphine";
+import GroupeFiches from "../Menu/GroupeFiches";
 import { Link } from "react-router-dom";
 import Style from "./Menu.module.css";
 

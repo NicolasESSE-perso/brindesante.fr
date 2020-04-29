@@ -1,9 +1,9 @@
 import React from "react";
-import ImgTitre from "./Brindesante.svg";
-import IconeMenu from "../icones/menu.svg";
+import ImgTitre from "../../Images/Brindesante.svg";
+import IconeMenu from "../../Images/icones/menu.svg";
 import Style from "./Titre.module.css";
-import LoupeMobile from "../icones/LoupeMobile.svg";
-import FermerMobile from "../icones/FermerMobile.svg";
+import LoupeMobile from "../../Images/icones/LoupeMobile.svg";
+import FermerMobile from "../../Images/icones/FermerMobile.svg";
 import { Link } from "react-router-dom";
 
 function Titre() {

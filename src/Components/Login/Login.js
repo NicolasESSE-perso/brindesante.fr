@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import Style from "./Login.module.css";
-import LogoDelphine from "../Menu/LogoDelphine.svg";
-import ImageConnexion from "../icones/ImageConnexion.svg";
+import LogoDelphine from "../../Images/LogoDelphine.svg";
+import ImageConnexion from "../../Images/ImageConnexion.svg";
 import { sha256 } from "js-sha256";
 import MessageErreur from "./MessageErreur";
-import { DelphineContext } from "../DelphineContext";
+import { DelphineContext } from "../../Context/DelphineContext";
 
 function Login({ onConnect, onClose }) {
   // eslint-disable-next-line

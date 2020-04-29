@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import Style from "./EditionFiche.module.css";
-import IconeFermer from "../icones/Fermer.svg";
+import IconeFermer from "../Images/icones/Fermer.svg";
 import EditionBouton from "./EditionBouton";
 import EditionListeArticle from "./Articles/EditionListeArticles";
 import MonEditeur from "./MonEditeur/MonEditeur";
 import EditionIllustrations from "../Images/EditionIllustrations";
 import CheckboxAccueil from "./CheckboxAccueil";
-import { ListeFichesContext } from "../ListeFichesContext";
+import { ListeFichesContext } from "../Context/ListeFichesContext";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes

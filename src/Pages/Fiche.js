@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import Style from "./Fiche.module.css";
 import EditionFiche from "../EditionFiche/EditionFiche";
-import Article from "./Article";
-import { DelphineContext } from "../DelphineContext";
-import BoutonModifier from "../Boutons/BoutonModifier";
-import Symptomes from "./Symptomes";
+import Article from "../Components/Fiche/Article";
+import { DelphineContext } from "../Context/DelphineContext";
+import BoutonModifier from "../Components/Boutons/BoutonModifier";
+import Symptomes from "../Components/Fiche/Symptomes";
 import Illustrations from "../Images/Illustrations";
 
 function Fiche({ match }) {

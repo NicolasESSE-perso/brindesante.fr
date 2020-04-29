@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./EditionArticle.module.css";
-import IconeSupprimer from "../../icones/Supprimer.svg";
+import IconeSupprimer from "../../Images/icones/Supprimer.svg";
 import MonEditeur from "../MonEditeur/MonEditeur";
 //import { EditorState } from "draft-js";
 

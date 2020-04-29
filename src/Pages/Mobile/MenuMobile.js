@@ -1,5 +1,5 @@
 import React from "react";
-import GroupeFiches from "../GroupeFiches";
+import GroupeFiches from "../../Components/Menu/GroupeFiches";
 import Style from "./MenuMobile.module.css";
 
 function MenuMobile() {

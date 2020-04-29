@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import Style from "./Recherche.module.css";
-import { ListeFichesContext } from "../ListeFichesContext";
-import NombreDeResultat from "./NombreDeResultat";
-import FicheM from "../FicheM/FicheM";
+import { ListeFichesContext } from "../Context/ListeFichesContext";
+import NombreDeResultat from "../Components/Recherche/NombreDeResultat";
+import FicheM from "../Components/FicheM/FicheM";
 
 function Recherche() {
   const [texteRecherche, setTexteRecherche] = useState("");

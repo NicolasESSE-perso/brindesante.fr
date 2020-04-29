@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
-import { ListeFichesContext } from "./ListeFichesContext";
-import FicheM from "./FicheM/FicheM";
+import { ListeFichesContext } from "../Context/ListeFichesContext";
+import FicheM from "../Components/FicheM/FicheM";
 import Style from "./HomePage.module.css";
-import LogoDelphine from "./Menu/LogoDelphine";
+import LogoDelphine from "../Components/Menu/LogoDelphine";
 import { Link } from "react-router-dom";
 
 function Homepage() {
