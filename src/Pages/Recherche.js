@@ -77,7 +77,7 @@ function Recherche() {
           onChange={updateTexteRecherche}
         />
       </form>
-      <div>
+      <div className={Style.NbResultats}>
         <NombreDeResultat
           nbResultats={resultats.length}
           unResultat="fiche trouvée"

@@ -39,6 +39,10 @@
   margin-bottom: 20px;
 }
 
+.Connexion {
+  color: #6fa2a7;
+}
+
 @media screen and (max-width: 768px) {
   .Apropos {
     display: flex;

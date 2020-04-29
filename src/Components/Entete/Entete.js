@@ -4,6 +4,7 @@ import EditionFiche from "../../EditionFiche/EditionFiche";
 import Style from "./Entete.module.css";
 import { DelphineContext } from "../../Context/DelphineContext";
 import BoutonAjouter from "../../Components/Boutons/BoutonAjouter";
+import IconeLoupe from "../../Images/icones/Loupe.svg";
 
 function Entete() {
   //NIE est ce que Delphine est connecté?
@@ -43,7 +44,8 @@ function Entete() {
         ""
       )}
       <div className={Style.NavLink}>
-        <Link to="/recherche">Rechercher </Link>
+        <img className={Style.IconeLoupe} src={IconeLoupe} alt="loupe" />
+        <Link to="/recherche">Rechercher</Link>
       </div>
       <div className={Style.NavLink}>
         <Link to="/Apropos">A propos</Link>
