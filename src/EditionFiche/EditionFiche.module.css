@@ -5,14 +5,18 @@
   top: 0px;
   left: 0px;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .Feuille {
   background: white;
   margin: 30px auto;
   width: 900px;
-  margin-bottom: 10px;
-  padding-bottom: 80px;
+  min-height: 100vh;
+  padding-bottom: 120px;
 }
 
 input::placeholder {
@@ -22,13 +26,28 @@ textarea::placeholder {
   color: #ccc;
 }
 
-.TitreBloc {
+.Photo {
+  max-width: 130px;
+  min-width: 130px;
+}
+
+.TitreBlocSymptome {
   color: #6fa2a7;
-  width: 180px;
+  width: 170px;
   font-size: 20px;
   font-weight: 700;
   text-align: right;
   padding-right: 20px;
+  padding-top: 7px;
+}
+
+.TitreBloc {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: left;
+  padding-left: 20px;
+  height: 50px;
+  padding-top: 10px;
 }
 
 .Entete {
@@ -52,14 +71,6 @@ textarea::placeholder {
   margin: 30px 20px 20px 20px;
   border-bottom: 1px solid #6fa2a7;
   min-height: 120px;
-}
-
-.Photo {
-  min-width: 100px;
-  max-width: 100px;
-  height: 100px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .BlocTitreData {
@@ -100,10 +111,11 @@ textarea::placeholder {
 
 .BoutonEnregistrer {
   position: fixed;
-  bottom: 0px;
+  bottom: 40px;
   z-index: 1000;
   height: 50px;
-  min-width: 180px;
+  width: 500px;
+  margin-left: 200px;
   padding-right: 20px;
   padding-left: 20px;
   border-radius: 8px;
@@ -113,21 +125,40 @@ textarea::placeholder {
   font-size: 18px;
   font-weight: 700;
   box-shadow: 2px 2px 16px rgba(151, 150, 150, 0.541);
-  margin-left: 35%;
-  margin-bottom: 30px;
 }
 
-.symptomes,
-.conseils,
-.allerMedecin,
-.autresConseils {
+.symptomes {
   width: 100%;
   padding: 0px 20px 20px 20px;
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 }
 
-.Editor,
-.WrapperFiche {
-  width: 700px;
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-left: 20px;
+}
+
+.BlocConseils {
+  background-color: #e8e098;
+  width: 420px;
+  margin-right: 20px;
+}
+
+.BlocsAllezMedecin {
+  background-color: #f5f4f2;
+  width: 420px;
+}
+
+.Editor {
+  width: 100%;
+}
+
+.BlocAutresConseils {
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

@@ -7,7 +7,6 @@ function Illustrations({ monUrl, alt }) {
   useEffect(() => {
     if (monUrl) {
       const urlComplete = process.env.REACT_APP_URL_API_BRINDESANTE + monUrl;
-      console.log(urlComplete);
       setSourceImage(urlComplete);
     } else {
       setSourceImage(ImageDefaut);

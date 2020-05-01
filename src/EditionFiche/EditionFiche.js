@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import Style from "./EditionFiche.module.css";
 import IconeFermer from "../Images/icones/Fermer.svg";
-import EditionBouton from "./EditionBouton";
-import EditionListeArticle from "./Articles/EditionListeArticles";
-import MonEditeur from "./MonEditeur/MonEditeur";
+import EditionBouton from "../Components/Boutons/EditionBouton";
+import EditionListeArticle from "../Components/Articles/EditionListeArticles";
+import MonEditeur from "../Components/MonEditeur/MonEditeur";
 import EditionIllustrations from "../Images/EditionIllustrations";
-import CheckboxAccueil from "./CheckboxAccueil";
+import CheckboxAccueil from "../Components/EditionFiche/CheckboxAccueil";
 import { ListeFichesContext } from "../Context/ListeFichesContext";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
@@ -110,7 +110,6 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   };
 
   const updateArticles = (articles) => {
-    console.log(articles);
     setArticles(articles);
   };
 
@@ -147,7 +146,6 @@ function EditionFiche({ ficheId, onClose, onSave }) {
 
   return (
     <div className={Style.Background}>
-      {ficheId}
       <div className={Style.Feuille}>
         <div className={Style.Entete}>
           <img src={IconeFermer} alt="Fermer" onClick={FermerPopup} />
@@ -156,7 +154,6 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         <form onSubmit={actionSauvegarde}>
           <div className={Style.BlocTitre}>
             <div className={Style.Photo}>
-              {" "}
               <EditionIllustrations
                 imageUrl={imageUrl}
                 onChange={(newUrl) => setImageUrl(newUrl)}
@@ -199,7 +196,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
           </div>
 
           <div className={Style.symptomes}>
-            <h2 className={Style.TitreBloc}>Symptômes</h2>
+            <h2 className={Style.TitreBlocSymptome}>Symptômes</h2>
             <div className={Style.Editor}>
               <MonEditeur
                 onTextChange={updateSymptomes}
@@ -210,35 +207,33 @@ function EditionFiche({ ficheId, onClose, onSave }) {
             </div>
           </div>
 
-          <div className={Style.conseils}>
-            <h2 className={Style.TitreBloc}>Conseils</h2>
-            <div className={Style.Editor}>
-              <MonEditeur
-                onTextChange={updateConseils}
-                textHtml={conseils}
-                placeholder="Quels sont tes conseils  ?"
-                colorBarre="#C4E3E6"
-              />
+          <div className={Style.Wrapper}>
+            <div className={Style.BlocConseils}>
+              <h2 className={Style.TitreBloc}>Que faire?</h2>
+              <div className={Style.Editor}>
+                <MonEditeur
+                  onTextChange={updateConseils}
+                  textHtml={conseils}
+                  placeholder="Quels sont tes conseils  ?"
+                  colorBarre="#C4E3E6"
+                />
+              </div>
+            </div>
+            <div className={Style.BlocsAllezMedecin}>
+              <h2 className={Style.TitreBloc}>Je vais chez le médecin si :</h2>
+              <div className={Style.Editor}>
+                <MonEditeur
+                  onTextChange={updateAllerMedecin}
+                  textHtml={allerMedecin}
+                  placeholder="Quand doit-on aller chez le médecin ?"
+                  colorBarre="#C4E3E6"
+                />
+              </div>
             </div>
           </div>
 
-          <div className={Style.allerMedecin}>
-            <h2 className={Style.TitreBloc}>Aller chez le médecin ?</h2>
-            <div className={Style.Editor}>
-              <MonEditeur
-                onTextChange={updateAllerMedecin}
-                textHtml={allerMedecin}
-                placeholder="Quand doit-on aller chez le médecin ?"
-                colorBarre="#C4E3E6"
-              />
-            </div>
-          </div>
-
-          <div className={Style.autresConseils}>
-            <h2 className={Style.TitreBloc}>Autres Conseils</h2>
-            <div className={Style.WrapperFiche}>
-              <EditionListeArticle value={articles} onChange={updateArticles} />
-            </div>
+          <div className={Style.BlocAutresConseils}>
+            <EditionListeArticle value={articles} onChange={updateArticles} />
           </div>
           <div className={Style.BlocEnregistrer}>
             <button className={Style.BoutonEnregistrer} type="submit">

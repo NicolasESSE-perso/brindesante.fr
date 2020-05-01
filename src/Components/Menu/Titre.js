@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ImgTitre from "../../Images/Brindesante.svg";
 import IconeMenu from "../../Images/icones/menu.svg";
 import Style from "./Titre.module.css";

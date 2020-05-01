@@ -9,7 +9,6 @@ function EditionsListeArticles({ value, onChange }) {
   //NIE chargement des données
   useEffect(() => {
     if (value.length > 0 && articles.length === 0) {
-      console.log({ chargement: value });
       setArticles(value);
     }
   }, [value, articles.length]);
@@ -23,10 +22,8 @@ function EditionsListeArticles({ value, onChange }) {
 
   //NIE Action de Article
   const supprimerArticle = (index) => {
-    console.log({ supprimerArticle: index });
     let copyArticle = [...articles];
     copyArticle.splice(index, 1);
-    console.log(copyArticle);
     setArticles(copyArticle);
   };
 
@@ -36,7 +33,6 @@ function EditionsListeArticles({ value, onChange }) {
     let copyArticle = [...articles];
     copyArticle.splice(id, 1, data);
     setArticles(copyArticle);
-    console.log(articles);
     //NIE je renvoie la liste des articles à jour
     onChange(articles);
   };
@@ -45,13 +41,15 @@ function EditionsListeArticles({ value, onChange }) {
     <div>
       <div className={Style.FicheWrapper}>
         {articles.map((article, index) => (
-          <EditionArticle
-            article={article}
-            id={index}
-            onChange={onEditionArticleChange}
-            onDelete={supprimerArticle}
-            key={index}
-          />
+          <div className={Style.EditionArticle} key={index}>
+            <EditionArticle
+              article={article}
+              id={index}
+              onChange={onEditionArticleChange}
+              onDelete={supprimerArticle}
+              key={index}
+            />
+          </div>
         ))}
 
         <div className={Style.BoutonAjouterFiche} onClick={ajouterArticle}>

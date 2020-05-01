@@ -1,32 +1,24 @@
 import React, { useEffect, useState } from "react";
-import {
-  Editor,
-  RichUtils,
-  EditorState,
-  convertFromHTML,
-  ContentState,
-} from "draft-js";
+import { Editor, RichUtils, EditorState } from "draft-js";
 import Style from "./MonEditeur.module.css";
 import { stateToHTML } from "draft-js-export-html";
+import { stateFromHTML } from "draft-js-import-html";
 
 function MonEditeur({ textHtml, onTextChange, placeholder }) {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const state = stateFromHTML("<p><br></p>");
+  const [initTexte, setInitTexte] = useState(false);
+  const [editorState, setEditorState] = useState(
+    EditorState.createWithContent(state)
+  );
 
-  //NIE
+  //NIE intilisation de l'éditeur
   useEffect(() => {
     //console.log({ textHtml: textHtml });
-    //console.log({ editorState: editorState.getCurrentContent() });
-    if (textHtml && !editorState.getCurrentContent().hasText()) {
-      //console.log({ initilisationdutexte: textHtml });
-      //setEditorState(EditorState.createWithContent(convertFromRaw(JSON.parse(value)));
-      const blocksFromHTML = convertFromHTML(textHtml);
-      const state = ContentState.createFromBlockArray(
-        blocksFromHTML.contentBlocks,
-        blocksFromHTML.entityMap
-      );
+    if (!initTexte && textHtml !== "") {
+      //    console.log("Initilisation");
+      setInitTexte(true);
+      const state = stateFromHTML(textHtml);
       setEditorState(EditorState.createWithContent(state));
-    } else {
-      //console.log(false);
     }
     //NIE c'est volontaire alors je ne veux pas afficher l'avertissement en dessous
     // eslint-disable-next-line
@@ -34,18 +26,15 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
 
   //NIE quand on change le texte dans mon éditeur
   const onEditorChange = (value) => {
-    //console.log({ editorState: editorState.getCurrentContent().hasText() });
+    //NIE j'enregistre l'état
     setEditorState(value);
+    setInitTexte(true);
 
     //NIE je retourne le texte.
-    let contentState = editorState.getCurrentContent();
+    let contentState = value.getCurrentContent();
     let html = stateToHTML(contentState);
-    //console.log({ html: html });
     onTextChange(html);
-    //    if (value) {
-    //    const contentState = editorState.getCurrentContent();
-    //  onChange(JSON.stringify(convertToRaw(contentState)));
-    // }
+    setInitTexte(true);
   };
 
   //NIE Gestion des raccourci claviers
@@ -71,9 +60,6 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
   const onStrikeThroughClick = () => {
     onEditorChange(RichUtils.toggleInlineStyle(editorState, "STRIKETHROUGH"));
   };
-  const onHighlight = () => {
-    onEditorChange(RichUtils.toggleInlineStyle(editorState, "HIGHLIGHT"));
-  };
 
   return (
     <div className={Style.MonEditeur}>
@@ -82,24 +68,24 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
           editorState={editorState}
           onChange={onEditorChange}
           handleKeyCommand={handleKeyCommand}
-          placeholder={placeholder}
         />
       </div>
       <div className={Style.ToolBar}>
-        <div className={Style.Bouton} onClick={onUnderlineClick}>
+        <div
+          style={{ textDecoration: "underline" }}
+          className={Style.Bouton}
+          onClick={onUnderlineClick}
+        >
           U
         </div>
-        <div className={Style.Bouton} onClick={onBoldClick}>
+        <div onClick={onBoldClick}>
           <b>B</b>
         </div>
         <div className={Style.Bouton} onClick={onItalicClick}>
           <em>I</em>
         </div>
         <div className={Style.Bouton} onClick={onStrikeThroughClick}>
-          abc
-        </div>
-        <div className={Style.Bouton} onClick={onHighlight}>
-          <span style={{ background: "yellow", color: "black" }}>H</span>
+          <span style={{ textDecoration: "line-through" }}>abc</span>
         </div>
       </div>
     </div>

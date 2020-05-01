@@ -7,11 +7,14 @@
 .EnteteFiche {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 }
 
 .Illustration {
+  margin-left: 20px;
   max-width: 130px;
   min-width: 130px;
+  margin-bottom: 20px;
 }
 
 .Titre {
@@ -64,9 +67,10 @@
   flex-wrap: wrap;
 }
 .Conseil {
-  min-width: 330px;
+  min-width: 49%;
   max-width: 49%;
-  padding: 20px 20px 20px 20px;
+
+  padding: 20px 20px 40px 20px;
   background-color: #e8e098;
 }
 
@@ -79,7 +83,7 @@
 .AllezMedecin {
   min-width: 330px;
   width: 49%;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 20px 40px 20px;
   background-color: #f5f4f2;
   color: #333;
 }
@@ -101,29 +105,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  .EnteteFiche {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .Illustration {
-    max-width: 80px;
-    min-width: 80px;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
   .BarreAction {
     display: none;
   }
 
+  .EnteteFiche {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
   .Titre {
+    max-width: 100%;
     min-width: 320px;
-    padding-left: 5%;
-    padding-left: 5%;
     padding-bottom: 20px;
     border-bottom: 1px solid #f5f4f2;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
   }
@@ -149,5 +145,13 @@
     padding-left: 0px;
     padding-top: 10px;
     font-style: italic;
+  }
+
+  .Conseil {
+    min-width: 100%;
+  }
+
+  .AllezMedecin {
+    min-width: 100%;
   }
 }

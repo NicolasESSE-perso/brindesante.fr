@@ -26,6 +26,7 @@ a:active {
 .boutonEditor {
   background: greenyellow;
 }
+
 @media screen and (max-width: 768px) {
   .App {
     min-width: 100%;

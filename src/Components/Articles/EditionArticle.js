@@ -16,16 +16,7 @@ function EdtionArticle({ article, id, onDelete, onChange }) {
   const updateTitre = (e) => {
     const monArticle = {
       titre: e.target.value,
-      value: article.value,
-    };
-    onChange(monArticle, id);
-  };
-
-  const updateTexte = (e) => {
-    const monArticle = {
-      titre: article.titre,
-      texte: e.target.value,
-      value: article.value,
+      texte: article.texte,
     };
     onChange(monArticle, id);
   };
@@ -34,7 +25,6 @@ function EdtionArticle({ article, id, onDelete, onChange }) {
     const monArticle = {
       titre: article.titre,
       texte: value,
-      //value: value,
     };
     onChange(monArticle, id);
   };
@@ -57,13 +47,6 @@ function EdtionArticle({ article, id, onDelete, onChange }) {
           onClick={supprimerArticle}
         />
       </div>
-      <textarea
-        className={Style.InputTexte}
-        type="text"
-        name="texte"
-        value={article.texte}
-        onChange={updateTexte}
-      />
 
       <MonEditeur
         textHtml={article.texte}

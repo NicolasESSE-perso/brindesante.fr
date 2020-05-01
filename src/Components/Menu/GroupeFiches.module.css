@@ -13,3 +13,9 @@
   padding-top: 17px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .GroupeFiches {
+    min-width: 80%;
+  }
+}

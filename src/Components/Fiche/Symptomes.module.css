@@ -1,17 +1,16 @@
 .Symptomes {
   display: flex;
   flex-direction: row;
-  padding-bottom: 20px;
   border-bottom: 1px solid #f5f4f2;
-  padding-right: 20px;
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .Titre {
   padding-right: 50px;
   font-weight: 700;
   color: #6fa2a7;
-  width: 150px;
+  width: 170px;
 }
 
 .SymptomesData {
@@ -29,7 +28,7 @@
 @media screen and (max-width: 768px) {
   .Symptomes {
     flex-direction: column;
-    padding-left: ;
+    padding: 0px 20px 20px 20px;
   }
   .Titre {
     font-weight: 700;

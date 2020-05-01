@@ -11,11 +11,9 @@ function GroupeFiches() {
   return (
     <div className={Style.GroupeFiches}>
       <div className={Style.TitreGroupe}>SYMPTOMES</div>
-      <div>
-        {fiches.map((fiche) => (
-          <Lienfiche titre={fiche.titre} fiche_id={fiche._id} key={fiche._id} />
-        ))}
-      </div>
+      {fiches.map((fiche) => (
+        <Lienfiche titre={fiche.titre} fiche_id={fiche._id} key={fiche._id} />
+      ))}
     </div>
   );
 }
