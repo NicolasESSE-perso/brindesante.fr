@@ -7,6 +7,7 @@ import MonEditeur from "../Components/MonEditeur/MonEditeur";
 import EditionIllustrations from "../Images/EditionIllustrations";
 import CheckboxAccueil from "../Components/EditionFiche/CheckboxAccueil";
 import { ListeFichesContext } from "../Context/ListeFichesContext";
+import SelectGroupeFiche from "../Components/EditionFiche/SelectGroupeFiche";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
@@ -21,6 +22,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [articles, setArticles] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
   const [afficherEnPageAccueil, setAfficherEnPageAccueil] = useState(false);
+  const [groupeFiche, setGroupeFiche] = useState();
 
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
@@ -73,6 +75,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setArticles(maFiche.articles);
     setImageUrl(maFiche.image_url);
     setAfficherEnPageAccueil(maFiche.afficher_en_page_accueil);
+    setGroupeFiche(maFiche.groupe);
   };
 
   //NIE Action sur ma popup
@@ -137,6 +140,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         articles: articles,
         image_url: imageUrl,
         afficher_en_page_accueil: afficherEnPageAccueil,
+        groupe: groupeFiche,
       }),
     });
     //NIE je force le contexte à se reload
@@ -180,12 +184,19 @@ function EditionFiche({ ficheId, onClose, onSave }) {
                 {libelleDateModification}
                 {dateModif}
               </p>
+              <div className={Style.GroupeFiche}>
+                <SelectGroupeFiche
+                  value={groupeFiche}
+                  onChange={(value) => setGroupeFiche(value)}
+                />
+              </div>
               <div className="TitreBouton">
                 <EditionBouton
                   texte={titreBouton}
                   onTexteChange={onTitreBoutonChange}
                 />
               </div>
+
               <div>
                 <CheckboxAccueil
                   checked={afficherEnPageAccueil}

@@ -108,6 +108,10 @@ textarea::placeholder {
   font-style: italic;
   margin-bottom: 20px;
 }
+.GroupeFiche {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .BoutonEnregistrer {
   position: fixed;

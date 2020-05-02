@@ -11,8 +11,8 @@ import { FichesProvider } from "./Context/ListeFichesContext";
 import Login from "./Components/Login/Login";
 import { DelphineProvider } from "./Context/DelphineContext";
 import MenuMobile from "./Pages/Mobile/MenuMobile";
-import EditionFiche from "./EditionFiche/EditionFiche";
 import MonEditeur from "./Components/MonEditeur/MonEditeur";
+import SelectGroupeFiche from "./Components/EditionFiche/SelectGroupeFiche";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
               <Route path="/Recherche" component={Recherche} />
               <Route path="/Login" component={Login} />
               <Route path="/MenuMobile" component={MenuMobile} />
-              <Route path="/dev" component={EditionFiche} />
+              <Route path="/dev" component={SelectGroupeFiche} />
               <Route path="/editeur" component={MonEditeur} />
             </div>
           </div>

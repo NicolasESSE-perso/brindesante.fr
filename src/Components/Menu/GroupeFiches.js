@@ -2,17 +2,24 @@ import React, { useContext } from "react";
 import Style from "./GroupeFiches.module.css";
 import { ListeFichesContext } from "../../Context/ListeFichesContext";
 import Lienfiche from "./Lienfiche";
+import FichesDuGroupe from "./FichesDuGroupe";
 
 function GroupeFiches() {
   const contexte = useContext(ListeFichesContext);
 
   const fiches = contexte.fiches;
+  const groupes = contexte.groupes;
 
   return (
     <div className={Style.GroupeFiches}>
-      <div className={Style.TitreGroupe}>SYMPTOMES</div>
-      {fiches.map((fiche) => (
-        <Lienfiche titre={fiche.titre} fiche_id={fiche._id} key={fiche._id} />
+      <FichesDuGroupe groupe={undefined} />
+      {groupes.map((groupe) => (
+        <div key={groupe}>
+          <div className={Style.TitreGroupe}>{groupe}</div>
+          <div>
+            <FichesDuGroupe groupe={groupe} />
+          </div>
+        </div>
       ))}
     </div>
   );

@@ -7,9 +7,9 @@ export const FichesProvider = (props) => {
 
   //NIE je créé un tableau vide que va contenir les fiches.
   const [fiches, setFiches] = useState([]);
+  const [groupes, setGroupes] = useState([]);
 
   //NIE fonction pour récupérer mes données de l'API
-
   const getFiches = () => {
     const fetchData = async () => {
       //NIE je récupère les data depuis l'API
@@ -34,6 +34,34 @@ export const FichesProvider = (props) => {
     fetchData();
   };
 
+  //NIE récupération des groupes
+  const getGroupes = () => {
+    const tempArray = [];
+    fiches.forEach((fiche) => {
+      const exist = tempArray.includes(fiche.groupe);
+      //console.log(exist);
+      if (!exist && fiche.groupe) {
+        //console.log("Ajout :" + fiche.groupe);
+        //! NIE attention ca retourne la longueur du tableau d'où le tableau temporaire
+        tempArray.push(fiche.groupe);
+        //console.log(tempArray);
+      }
+
+      //NIE affichage par ordre alphabtique des groupes
+
+      tempArray.sort();
+    });
+    setGroupes(tempArray);
+  };
+
+  useEffect(() => {
+    //NIE je récupère les groupes des fiches
+
+    getGroupes();
+    // eslint-disable-next-line
+  }, [fiches]);
+
+  //NIE à la construction du composant
   useEffect(() => {
     getFiches();
     //NIE si je déclare en dehors du useEffect j'ai des erreurs
@@ -42,7 +70,7 @@ export const FichesProvider = (props) => {
 
   return (
     <ListeFichesContext.Provider
-      value={{ fiches: fiches, getFiches: getFiches }}
+      value={{ fiches: fiches, getFiches: getFiches, groupes: groupes }}
     >
       {props.children}
     </ListeFichesContext.Provider>
