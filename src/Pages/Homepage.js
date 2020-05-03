@@ -4,6 +4,7 @@ import FicheM from "../Components/FicheM/FicheM";
 import Style from "./HomePage.module.css";
 import LogoDelphine from "../Components/Menu/LogoDelphine";
 import { Link } from "react-router-dom";
+import TexteBrinDeSante from "../Components/TexteBrinDeSante/TexteBrinDeSante";
 
 function Homepage() {
   const contexte = useContext(ListeFichesContext);
@@ -53,10 +54,9 @@ function Homepage() {
         <LogoDelphine />
       </div>
       <div className={Style.HomePage}>
-        <h1 className={Style.Phrase}>
-          "Des conseils sur les premiers soins à effectuer pour savoir quoi
-          faire quand on ne sait plus quoi faire !"
-        </h1>
+        <div className={Style.Phrase}>
+          <TexteBrinDeSante isReadOnly={true} />
+        </div>
 
         <div className={Style.DivSousTitre}>
           <p className={Style.SousTitre}>Symptomes les plus fréquents</p>

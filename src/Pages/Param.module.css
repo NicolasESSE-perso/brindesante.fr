@@ -1,0 +1,41 @@
+.Param {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Param h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #6fa2a7;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.BlocParam {
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.TitreParam {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  min-height: 100%;
+  width: 20%;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #97989d;
+}
+
+.ComposantParam {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 80%;
+}
+
+.BoutonEnregistrer {
+  margin: 50px auto;
+}

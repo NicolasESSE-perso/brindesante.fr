@@ -13,28 +13,33 @@ import { DelphineProvider } from "./Context/DelphineContext";
 import MenuMobile from "./Pages/Mobile/MenuMobile";
 import MonEditeur from "./Components/MonEditeur/MonEditeur";
 import SelectGroupeFiche from "./Components/EditionFiche/SelectGroupeFiche";
+import Param from "./Pages/Param";
+import { ParamProvider } from "./Context/ParamContext";
 
 function App() {
   return (
     <Router>
-      <FichesProvider>
-        <DelphineProvider>
-          <div className="App">
-            <Menu />
-            <div className="Page">
-              <Entete />
-              <Route path="/Apropos" component={Apropos} />
-              <Route path="/Fiche/:id" component={Fiche} />
-              <Route path="/" exact component={Homepage} />
-              <Route path="/Recherche" component={Recherche} />
-              <Route path="/Login" component={Login} />
-              <Route path="/MenuMobile" component={MenuMobile} />
-              <Route path="/dev" component={SelectGroupeFiche} />
-              <Route path="/editeur" component={MonEditeur} />
+      <ParamProvider>
+        <FichesProvider>
+          <DelphineProvider>
+            <div className="App">
+              <Menu />
+              <div className="Page">
+                <Entete />
+                <Route path="/Apropos" component={Apropos} />
+                <Route path="/Fiche/:id" component={Fiche} />
+                <Route path="/" exact component={Homepage} />
+                <Route path="/Recherche" component={Recherche} />
+                <Route path="/Login" component={Login} />
+                <Route path="/MenuMobile" component={MenuMobile} />
+                <Route path="/dev" component={SelectGroupeFiche} />
+                <Route path="/editeur" component={MonEditeur} />
+                <Route path="/param" component={Param} />
+              </div>
             </div>
-          </div>
-        </DelphineProvider>
-      </FichesProvider>
+          </DelphineProvider>
+        </FichesProvider>
+      </ParamProvider>
     </Router>
   );
 }

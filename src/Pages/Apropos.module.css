@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: auto;
+  max-width: 80%;
 }
 
 .Logo {
@@ -16,13 +16,7 @@
   color: #6fa2a7;
   margin-top: 50px;
   text-align: center;
-}
-
-.Apropos p {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #333;
-  text-align: justify;
+  margin-bottom: 50px;
 }
 
 .Footer {
@@ -48,18 +42,29 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: auto;
     justify-content: center;
+    max-width: 80%;
   }
 
   .Logo {
+    margin-top: 20px;
     align-items: center;
     display: flex;
     justify-content: center;
   }
 
+  .Titre {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
   .Connexion {
     display: none;
+  }
+
+  .Footer {
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
 }
