@@ -4,7 +4,7 @@ import { DelphineContext } from "./DelphineContext";
 export const ListeFichesContext = createContext();
 
 export const FichesProvider = (props) => {
-  const isConnected = useContext(DelphineContext);
+  const [isConnected] = useContext(DelphineContext);
   var monUrlAPI = `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches`;
 
   if (isConnected) {
