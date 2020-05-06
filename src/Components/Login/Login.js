@@ -9,6 +9,7 @@ import { DelphineContext } from "../../Context/DelphineContext";
 function Login({ onConnect, onClose }) {
   // eslint-disable-next-line
   const [delphine, setDelphine] = useContext(DelphineContext);
+
   const [MotDePasse, setMotDePasse] = useState("");
   const Key =
     "332662390483642caa3365d61fcafacc2aa6e3e73eacd73cd2203c2111e6da8b";
@@ -21,6 +22,7 @@ function Login({ onConnect, onClose }) {
     if (sha256(MotDePasse) === Key) {
       //NIE je stocke le fait que l'on est connecté
       setDelphine("Connectée");
+
       //NIE je retourne que je suis connecté
       onConnect();
     } else {

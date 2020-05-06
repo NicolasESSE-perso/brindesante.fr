@@ -70,7 +70,7 @@ export const FichesProvider = (props) => {
 
     //NIE si je déclare en dehors du useEffect j'ai des erreurs
     // eslint-disable-next-line
-  }, []);
+  }, [isConnected]);
 
   return (
     <ListeFichesContext.Provider
