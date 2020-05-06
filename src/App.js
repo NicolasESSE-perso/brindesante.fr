@@ -20,8 +20,8 @@ function App() {
   return (
     <Router>
       <ParamProvider>
-        <FichesProvider>
-          <DelphineProvider>
+        <DelphineProvider>
+          <FichesProvider>
             <div className="App">
               <Menu />
               <div className="Page">
@@ -37,8 +37,8 @@ function App() {
                 <Route path="/param" component={Param} />
               </div>
             </div>
-          </DelphineProvider>
-        </FichesProvider>
+          </FichesProvider>
+        </DelphineProvider>
       </ParamProvider>
     </Router>
   );

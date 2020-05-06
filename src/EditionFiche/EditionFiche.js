@@ -8,6 +8,7 @@ import EditionIllustrations from "../Images/EditionIllustrations";
 import CheckboxAccueil from "../Components/EditionFiche/CheckboxAccueil";
 import { ListeFichesContext } from "../Context/ListeFichesContext";
 import SelectGroupeFiche from "../Components/EditionFiche/SelectGroupeFiche";
+import MasquerLaFiche from "../Components/EditionFiche/MasquerLaFiche";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
@@ -23,6 +24,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [imageUrl, setImageUrl] = useState("");
   const [afficherEnPageAccueil, setAfficherEnPageAccueil] = useState(false);
   const [groupeFiche, setGroupeFiche] = useState();
+  const [isMasque, setIsMasque] = useState(false);
 
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
@@ -76,6 +78,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setImageUrl(maFiche.image_url);
     setAfficherEnPageAccueil(maFiche.afficher_en_page_accueil);
     setGroupeFiche(maFiche.groupe);
+    setIsMasque(maFiche.is_masque);
   };
 
   //NIE Action sur ma popup
@@ -141,6 +144,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         image_url: imageUrl,
         afficher_en_page_accueil: afficherEnPageAccueil,
         groupe: groupeFiche,
+        is_masque: isMasque,
       }),
     });
     //NIE je force le contexte à se reload
@@ -190,10 +194,12 @@ function EditionFiche({ ficheId, onClose, onSave }) {
                   onChange={(value) => setGroupeFiche(value)}
                 />
               </div>
+              <div className={Style.MasquerFiche}></div>
               <div className="TitreBouton">
                 <EditionBouton
                   texte={titreBouton}
                   onTexteChange={onTitreBoutonChange}
+                  is_masque={isMasque}
                 />
               </div>
 
@@ -201,6 +207,10 @@ function EditionFiche({ ficheId, onClose, onSave }) {
                 <CheckboxAccueil
                   checked={afficherEnPageAccueil}
                   onChange={(value) => setAfficherEnPageAccueil(value)}
+                />
+                <MasquerLaFiche
+                  checked={isMasque}
+                  onChange={(value) => setIsMasque(value)}
                 />
               </div>
             </div>

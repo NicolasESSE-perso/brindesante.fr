@@ -38,7 +38,12 @@ function FichesDuGroupe({ groupe }) {
     <div className={Style.FichesDuGroupe}>
       {FichesDansLeGroupe.map((fiche) => (
         <div key={fiche._id}>
-          <Lienfiche titre={fiche.titre} fiche_id={fiche._id} key={fiche._id} />
+          <Lienfiche
+            titre={fiche.titre}
+            fiche_id={fiche._id}
+            key={fiche._id}
+            is_masque={fiche.is_masque}
+          />
         </div>
       ))}
     </div>

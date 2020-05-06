@@ -1,11 +1,17 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext, useEffect, useContext } from "react";
+import { DelphineContext } from "./DelphineContext";
 
 export const ListeFichesContext = createContext();
 
 export const FichesProvider = (props) => {
-  const monUrlAPI = `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches`;
+  const isConnected = useContext(DelphineContext);
+  var monUrlAPI = `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches`;
 
+  if (isConnected) {
+    monUrlAPI = `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches?is_masque=all`;
+  }
   //NIE je créé un tableau vide que va contenir les fiches.
+
   const [fiches, setFiches] = useState([]);
   const [groupes, setGroupes] = useState([]);
 
@@ -46,9 +52,7 @@ export const FichesProvider = (props) => {
         tempArray.push(fiche.groupe);
         //console.log(tempArray);
       }
-
       //NIE affichage par ordre alphabtique des groupes
-
       tempArray.sort();
     });
     setGroupes(tempArray);
@@ -56,7 +60,6 @@ export const FichesProvider = (props) => {
 
   useEffect(() => {
     //NIE je récupère les groupes des fiches
-
     getGroupes();
     // eslint-disable-next-line
   }, [fiches]);
@@ -64,6 +67,7 @@ export const FichesProvider = (props) => {
   //NIE à la construction du composant
   useEffect(() => {
     getFiches();
+
     //NIE si je déclare en dehors du useEffect j'ai des erreurs
     // eslint-disable-next-line
   }, []);

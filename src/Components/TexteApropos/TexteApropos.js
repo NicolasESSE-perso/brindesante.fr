@@ -14,7 +14,7 @@ function TexteApropos({ value, onChange, isReadOnly }) {
     textAlign: "justify",
     width: "100%",
     opacity: 1,
-    "-webkit-text-fill-color": "#333",
+    WebkitTextFillColor: "#333",
   };
 
   if (isReadOnly) {

@@ -1,0 +1,12 @@
+.MasquerLaFiche {
+  height: 50px;
+  width: 240px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.MasquerLaFiche:hover {
+  background-color: #ededed;
+  border-radius: 6px;
+}

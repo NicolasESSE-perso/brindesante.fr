@@ -8,14 +8,32 @@
   border-radius: 6px;
   margin-bottom: 10px;
   font-weight: 700;
+  color: #333;
+  font-size: 16px;
 }
 .LienFiche:hover {
   background-color: #e8e098;
   font-weight: 700;
 }
 
-.LienFiche p {
+.LienFicheMasque {
+  background-color: #6fa2a7;
+  height: 50px;
+  width: 240px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white;
   font-size: 16px;
+  border: dotted 2px white;
+}
+
+.LienFicheMasque:hover {
+  background-color: #e8e098;
+  font-weight: 700;
   color: #333;
 }
 
