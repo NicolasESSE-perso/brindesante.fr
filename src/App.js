@@ -15,6 +15,7 @@ import MonEditeur from "./Components/MonEditeur/MonEditeur";
 import SelectGroupeFiche from "./Components/EditionFiche/SelectGroupeFiche";
 import Param from "./Pages/Param";
 import { ParamProvider } from "./Context/ParamContext";
+import Stats from "./Pages/Stats";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/dev" component={SelectGroupeFiche} />
                 <Route path="/editeur" component={MonEditeur} />
                 <Route path="/param" component={Param} />
+                <Route path="/stats" component={Stats} />
               </div>
             </div>
           </FichesProvider>

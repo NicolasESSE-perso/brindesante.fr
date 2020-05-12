@@ -17,7 +17,6 @@ function Fiche({ match }) {
   const [dateModif, setDateModif] = useState();
   const [maFiche, setFiche] = useState({});
   const [ficheId, setFicheId] = useState();
-  const [ficheModified, setFicheModified] = useState(false);
   const [articles, setArticles] = useState([]);
 
   //NIE Mes fonctions
@@ -34,7 +33,7 @@ function Fiche({ match }) {
 
   const reloadAffichage = () => {
     console.log("reloadAffichage");
-    setFicheModified(true);
+    fetchData();
     fermerPopup();
   };
 
@@ -48,47 +47,46 @@ function Fiche({ match }) {
     );
   };
 
+  //NIE si je déclare en dehors du useEffect j'ai des erreurs
+  const fetchData = async () => {
+    //NIE je récupère les data depuis l'API
+    const data = await fetch(
+      `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches/${match.params.id}`
+    );
+    //NIE je convertis ce que je récupère en JSON pour obtenir un tableau de fiches :)
+    const ficheJson = await data.json();
+
+    //NIE c'est pratique pour développer
+    console.log({
+      composant: Fiche,
+      url: `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches/${match.params.id}`,
+      reponse: ficheJson,
+    });
+
+    //NIE j'enregistre les fiches dans la constante créée
+    setFiche(ficheJson);
+    //NIE Formattage de la date de modification
+    const tmp_date_modif = new Date(ficheJson.date_modif);
+    setDateModif(
+      tmp_date_modif.toLocaleDateString("fr-FR", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    );
+    setSymptomes(ficheJson.symptomes);
+    setArticles(ficheJson.articles);
+  };
+
   //NIE Import des données de la fiche chargé dans le contexte
   useEffect(() => {
     //NIE ma ficheID a renseigner quand mon composant récupères les props
     setFicheId(match.params.id);
-
-    //NIE si je déclare en dehors du useEffect j'ai des erreurs
-    const fetchData = async () => {
-      //NIE je récupère les data depuis l'API
-      const data = await fetch(
-        `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches/${match.params.id}`
-      );
-      //NIE je convertis ce que je récupère en JSON pour obtenir un tableau de fiches :)
-      const ficheJson = await data.json();
-
-      //NIE c'est pratique pour développer
-      console.log({
-        composant: Fiche,
-        url: `${process.env.REACT_APP_URL_API_BRINDESANTE}/fiches/${match.params.id}`,
-        reponse: ficheJson,
-      });
-
-      //NIE j'enregistre les fiches dans la constante créée
-      setFiche(ficheJson);
-      //NIE Formattage de la date de modification
-      const tmp_date_modif = new Date(ficheJson.date_modif);
-      setDateModif(
-        tmp_date_modif.toLocaleDateString("fr-FR", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-      );
-      setSymptomes(ficheJson.symptomes);
-      setArticles(ficheJson.articles);
-    };
     //NIE j'utilise la fonction pour récupérer mes données
     fetchData();
-    //NIE mes données viennent d'être chargée je remets modifiée à false
-    setFicheModified(false);
-  }, [match.params.id, ficheModified]);
+    // eslint-disable-next-line
+  }, [match.params.id]);
 
   return (
     <div className={Style.Fiche}>
@@ -120,11 +118,11 @@ function Fiche({ match }) {
 
       <div className={Style.FicheWrapper}>
         <div className={Style.Conseil}>
-          <h1>Que faire?</h1>
+          <h1>Que faire ?</h1>
           <p dangerouslySetInnerHTML={ToHtml(maFiche.conseils)}></p>
         </div>
         <div className={Style.AllezMedecin}>
-          <h1>Je vais chez le médecin si :</h1>
+          <h1>Je vais chez le médecin si</h1>
           <p
             dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
           ></p>

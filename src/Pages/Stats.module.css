@@ -1,0 +1,21 @@
+.Tableau {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background-color: #ededed;
+}
+.Entete {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-bottom: 2px solid #6fa2a7;
+  color: #6fa2a7;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.Ligne {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}

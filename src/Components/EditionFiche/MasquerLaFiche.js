@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Switch from "@material-ui/core/Switch";
 //import { withStyles } from "@material-ui/core/styles";
 import Style from "./MasquerLaFiche.module.css";
@@ -25,13 +25,16 @@ const style = {
 */
 
 function MasquerLaFiche({ checked, onChange }) {
+  const [value, setValue] = useState(checked);
+
+  const handleChange = (e) => {
+    setValue(e.target.checked);
+    onChange(e.target.checked);
+  };
+
   return (
     <div className={Style.MasquerLaFiche}>
-      <Switch
-        id="switch"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-      />
+      <Switch id="switch" checked={value} onChange={handleChange} />
       <label htmlFor="switch">Masquer la fiche</label>
     </div>
   );

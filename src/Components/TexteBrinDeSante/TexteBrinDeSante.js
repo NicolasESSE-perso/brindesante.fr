@@ -5,7 +5,6 @@ import TextareaAutosize from "react-autosize-textarea";
 function TexteBrinDeSante({ value, onChange, isReadOnly }) {
   const contexte = useContext(ParamContext);
   const param = contexte.param;
-  console.log(param);
 
   const style = {
     fontFamily: "Pacifico",

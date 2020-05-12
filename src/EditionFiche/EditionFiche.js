@@ -88,7 +88,6 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const actionSauvegarde = (event) => {
     event.preventDefault();
     sauvegarderFiche();
-    onSave();
   };
 
   //NIE Gestion de mon formulaire
@@ -148,8 +147,9 @@ function EditionFiche({ ficheId, onClose, onSave }) {
       }),
     });
     //NIE je force le contexte à se reload
-    //setFiches([]);
-    contexte.getFiches();
+    await contexte.getFiches();
+    //NIE je retourne le onSave() à la page appelante
+    await onSave();
   };
 
   return (
