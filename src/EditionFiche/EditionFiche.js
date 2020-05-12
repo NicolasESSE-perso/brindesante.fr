@@ -96,7 +96,6 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   };
 
   const updateTitreFiche = (event) => {
-    console.log({ titreBouton: titreBouton, titreFiche: titreFiche });
     setTitreFiche(event.target.value);
     if (titreBouton === titreFiche || titreBouton === "") {
       //NIE dans ce cas cela veut dire que l'on n'a pas modifié le titre sur le bouton. Je copie le titre dans le bouton

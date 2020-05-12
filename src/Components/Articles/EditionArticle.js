@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "./EditionArticle.module.css";
 import IconeSupprimer from "../../Images/icones/Supprimer.svg";
-import MonEditeur from "../MonEditeur/MonEditeur";
-//import { EditorState } from "draft-js";
+import IconeUp from "../../Images/icones/Up.svg";
+import IconeDown from "../../Images/icones/Down.svg";
 
-function EdtionArticle({ article, id, onDelete, onChange }) {
+import MonEditeur from "../MonEditeur/MonEditeur";
+
+function EdtionArticle({
+  article,
+  id,
+  onDelete,
+  onChange,
+  onMoveUp,
+  onMoveDown,
+}) {
+  const [afficherToolBar, SetAfficherToolBar] = useState(false);
+
   //const [monArticle, setMonArticle] = useState({});
   //const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const supprimerArticle = (e) => {
-    console.log({ supprimerArticle: e.target.id });
     onDelete(e.target.id);
+  };
+
+  const moveUp = (e) => {
+    onMoveUp(e.target.id);
+  };
+
+  const moveDown = (e) => {
+    onMoveDown(e.target.id);
   };
 
   const updateTitre = (e) => {
@@ -30,7 +48,11 @@ function EdtionArticle({ article, id, onDelete, onChange }) {
   };
 
   return (
-    <div className={Style.EditionArticle}>
+    <div
+      className={Style.EditionArticle}
+      onMouseEnter={() => SetAfficherToolBar(true)}
+      onMouseLeave={() => SetAfficherToolBar(false)}
+    >
       <div className={Style.TitreBloc}>
         <textarea
           className={Style.InputTitre}
@@ -39,15 +61,34 @@ function EdtionArticle({ article, id, onDelete, onChange }) {
           value={article.titre}
           onChange={updateTitre}
         />
-        <img
-          className={Style.IconeSupprimer}
-          src={IconeSupprimer}
-          id={id}
-          alt=" "
-          onClick={supprimerArticle}
-        />
-      </div>
+        {afficherToolBar && (
+          <div className={Style.ToolBar}>
+            <img
+              className={Style.IconeAction}
+              src={IconeUp}
+              id={id}
+              alt=" "
+              onClick={moveUp}
+            />
 
+            <img
+              className={Style.IconeAction}
+              src={IconeDown}
+              id={id}
+              alt=" "
+              onClick={moveDown}
+            />
+
+            <img
+              className={Style.IconeAction}
+              src={IconeSupprimer}
+              id={id}
+              alt=" "
+              onClick={supprimerArticle}
+            />
+          </div>
+        )}
+      </div>
       <MonEditeur
         textHtml={article.texte}
         onTextChange={updateValue}
