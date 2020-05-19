@@ -1,0 +1,36 @@
+.AffichageCorrection {
+  padding: 15px 10px 15px 0px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.BlocInfo {
+  width: 70%;
+  margin-right: 20px;
+}
+
+.Titre {
+  color: #6fa2a7;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Description {
+  color: "#333";
+  font-size: 15px;
+}
+
+.DateCreation {
+  font-size: 13px;
+  font-style: italic;
+  color: #97989d;
+}
+
+.AffichageEtatCorrection {
+  display: flex;
+  justify-content: center;
+  min-width: 180px;
+}

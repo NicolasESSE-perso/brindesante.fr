@@ -1,0 +1,66 @@
+.Correction {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px 20px;
+  border-left-style: 1px solid #ddd;
+  align-items: center;
+  height: 100vh;
+}
+
+.BlocTitrePanneau {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: #6fa2a7;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.TitrePanneau {
+  font-size: 20px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.Label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #6fa2a7;
+}
+
+.Formulaire {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Titre {
+  height: 30px;
+  padding: 7px 10px 7px 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.Description {
+  min-height: 90px;
+  padding: 7px 10px 7px 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.EtatCorrection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

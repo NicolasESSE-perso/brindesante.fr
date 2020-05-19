@@ -16,6 +16,7 @@ import SelectGroupeFiche from "./Components/EditionFiche/SelectGroupeFiche";
 import Param from "./Pages/Param";
 import { ParamProvider } from "./Context/ParamContext";
 import Stats from "./Pages/Stats";
+import Corrections from "./Pages/Corrections";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/editeur" component={MonEditeur} />
                 <Route path="/param" component={Param} />
                 <Route path="/stats" component={Stats} />
+                <Route path="/corrections" component={Corrections} />
               </div>
             </div>
           </FichesProvider>

@@ -1,0 +1,28 @@
+.BlocTitre {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Titre {
+  font-size: 24px;
+  color: #6fa2a7;
+  font-weight: 900;
+  margin-right: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.ListeCorrections {
+  width: 100%;
+}
+
+.EditionCorrection {
+  min-width: 50%;
+  border-left: 1px solid #6fa2a7;
+}

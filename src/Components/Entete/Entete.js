@@ -36,6 +36,11 @@ function Entete() {
         onClick={afficherAjoutFiche}
         isVisible={isConnected}
       />
+      {Boolean(isConnected) && (
+        <div className={Style.NavLink}>
+          <Link to="/corrections">Corrections</Link>
+        </div>
+      )}
       <div className={Style.NavLink}>
         <img className={Style.IconeLoupe} src={IconeLoupe} alt="loupe" />
         <Link to="/recherche">Rechercher</Link>
