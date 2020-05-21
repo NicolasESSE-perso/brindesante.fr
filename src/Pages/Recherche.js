@@ -22,6 +22,14 @@ function Recherche() {
     return texteSansAccent;
   };
 
+  //NIE j'enlève les mots en un une ...
+
+  const enlevemots = (texte) => {
+    let texteSansMot = texte.replace(/(au)/gi, "e");
+    console.log(texteSansMot);
+    return texteSansMot;
+  };
+
   //NIE recherche des fiches
   const rechercheFiches = (texteDeRecherche) => {
     //NIE je fais une copie du tableau des fiches
@@ -30,7 +38,11 @@ function Recherche() {
     var regexRecherche = texteDeRecherche;
 
     if (regexRecherche) {
+      //NIE j'enlève les un une le la ...
+      regexRecherche = enlevemots(regexRecherche);
+
       regexRecherche = texteDeRecherche.trim();
+
       regexRecherche = regexRecherche.replace(/ /gi, "|");
       regexRecherche = new RegExp(regexRecherche, "i");
     }
@@ -38,10 +50,12 @@ function Recherche() {
       //NIE gestion des accents
       const titre = enleveAccents(fiche.titre);
       const description = enleveAccents(fiche.description);
+      const titreFiche = enleveAccents(fiche.titre_fiche);
 
       if (
         titre.toUpperCase().match(regexRecherche) ||
-        description.toLowerCase().match(regexRecherche)
+        description.toLowerCase().match(regexRecherche) ||
+        titreFiche.toLowerCase().match(regexRecherche)
       ) {
         return 1;
       } else {
