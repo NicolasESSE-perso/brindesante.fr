@@ -31,11 +31,14 @@ function Entete() {
   return (
     <div className={Style.Entete}>
       {popUpAjoutFiche}
-      <BoutonAjouter
-        texte="Ajouter une fiche"
-        onClick={afficherAjoutFiche}
-        isVisible={isConnected}
-      />
+      <div className={Style.NavLink}>
+        <BoutonAjouter
+          texte="Ajouter une fiche"
+          onClick={afficherAjoutFiche}
+          isVisible={isConnected}
+        />
+      </div>
+
       {Boolean(isConnected) && (
         <div className={Style.NavLink}>
           <Link to="/corrections">Corrections</Link>

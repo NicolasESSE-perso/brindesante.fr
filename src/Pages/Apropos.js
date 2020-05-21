@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Style from "./Apropos.module.css";
 import Login from "../Components/Login/Login";
-import LogoDelphine from "../Images/LogoDelphine.svg";
+import LogoDelphine from "../Images/Logo150.svg";
 import { Link } from "react-router-dom";
 import TexteApropos from "../Components/TexteApropos/TexteApropos";
 
