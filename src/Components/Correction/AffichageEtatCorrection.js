@@ -9,6 +9,7 @@ export default function AffichageEtatCorrection({ etat, dateResolution }) {
     fontSize: "12px",
     fontWeight: "Bold",
     color: "white",
+    textAlign: "center",
   };
 
   let StyleDate = {

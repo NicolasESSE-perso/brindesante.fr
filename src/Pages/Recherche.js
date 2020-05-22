@@ -25,8 +25,23 @@ function Recherche() {
   //NIE j'enlève les mots en un une ...
 
   const enlevemots = (texte) => {
-    let texteSansMot = texte.replace(/(au)/gi, "e");
-    console.log(texteSansMot);
+    let texteSansMot = texte.replace(/ au /gi, " ");
+    texteSansMot = texteSansMot.replace(/ aux/gi, " ");
+    texteSansMot = texteSansMot.replace(/ à/gi, " ");
+    texteSansMot = texteSansMot.replace(/ la/gi, " ");
+    texteSansMot = texteSansMot.replace(/ le/gi, " ");
+    texteSansMot = texteSansMot.replace(/ les/gi, " ");
+    texteSansMot = texteSansMot.replace(/ de/gi, " ");
+    texteSansMot = texteSansMot.replace(/ du/gi, " ");
+    texteSansMot = texteSansMot.replace(/ des/gi, " ");
+    texteSansMot = texteSansMot.replace(/ ma/gi, " ");
+    texteSansMot = texteSansMot.replace(/ sur/gi, " ");
+    texteSansMot = texteSansMot.replace(/ sous/gi, " ");
+    texteSansMot = texteSansMot.replace(/ dans/gi, " ");
+    //NIE j'enlève les pluriels
+    texteSansMot = texteSansMot.replace(/s$/gi, " ");
+    texteSansMot = texteSansMot.replace(/s /gi, " ");
+
     return texteSansMot;
   };
 
@@ -38,24 +53,35 @@ function Recherche() {
     var regexRecherche = texteDeRecherche;
 
     if (regexRecherche) {
+      //NIE j'enlève les accents
+      regexRecherche = enleveAccents(regexRecherche);
+
       //NIE j'enlève les un une le la ...
       regexRecherche = enlevemots(regexRecherche);
+      //console.log({ enlevemots: regexRecherche });
 
-      regexRecherche = texteDeRecherche.trim();
-
-      regexRecherche = regexRecherche.replace(/ /gi, "|");
+      regexRecherche = regexRecherche.trim();
+      regexRecherche = regexRecherche.replace(/ /gi, ".*");
       regexRecherche = new RegExp(regexRecherche, "i");
+      // console.log({ regexRecherche: regexRecherche });
     }
+
     const resArray = tempArray.filter((fiche) => {
       //NIE gestion des accents
       const titre = enleveAccents(fiche.titre);
       const description = enleveAccents(fiche.description);
       const titreFiche = enleveAccents(fiche.titre_fiche);
+      const symptome = enleveAccents(fiche.symptomes);
+      const conseils = enleveAccents(fiche.conseils);
+      const aller_chez_le_medecin = enleveAccents(fiche.aller_chez_le_medecin);
 
       if (
         titre.toUpperCase().match(regexRecherche) ||
         description.toLowerCase().match(regexRecherche) ||
-        titreFiche.toLowerCase().match(regexRecherche)
+        titreFiche.toLowerCase().match(regexRecherche) ||
+        symptome.toLowerCase().match(regexRecherche) ||
+        conseils.toLowerCase().match(regexRecherche) ||
+        aller_chez_le_medecin.toLowerCase().match(regexRecherche)
       ) {
         return 1;
       } else {
@@ -73,7 +99,6 @@ function Recherche() {
   const updateTexteRecherche = (event) => {
     setTexteRecherche(event.target.value);
 
-    console.log(event.target.value);
     rechercheFiches(event.target.value);
   };
 
@@ -81,7 +106,7 @@ function Recherche() {
     <div className={Style.PageRecherche}>
       <h1>Recherche</h1>
       <form onSubmit={submitFormulaire} className={Style.formulaire}>
-        <input
+        <inputnode
           className={Style.ChampRecherche}
           name="ChampRecherche"
           id="ChampRecherche"
