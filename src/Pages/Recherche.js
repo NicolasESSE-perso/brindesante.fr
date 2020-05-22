@@ -19,6 +19,8 @@ function Recherche() {
   const enleveAccents = (texte) => {
     let texteSansAccent = texte.replace(/[èéêë]/gi, "e");
     texteSansAccent = texteSansAccent.replace(/[àâä]/gi, "a");
+    texteSansAccent = texteSansAccent.replace(/[ûü]/gi, "u");
+
     return texteSansAccent;
   };
 
@@ -58,12 +60,13 @@ function Recherche() {
 
       //NIE j'enlève les un une le la ...
       regexRecherche = enlevemots(regexRecherche);
-      //console.log({ enlevemots: regexRecherche });
+      console.log({ enlevemots: regexRecherche });
 
       regexRecherche = regexRecherche.trim();
       regexRecherche = regexRecherche.replace(/ /gi, ".*");
       regexRecherche = new RegExp(regexRecherche, "i");
       // console.log({ regexRecherche: regexRecherche });
+      console.log({ regexRecherche: regexRecherche });
     }
 
     const resArray = tempArray.filter((fiche) => {
@@ -99,6 +102,7 @@ function Recherche() {
   const updateTexteRecherche = (event) => {
     setTexteRecherche(event.target.value);
 
+    console.log(event.target.value);
     rechercheFiches(event.target.value);
   };
 
@@ -106,7 +110,7 @@ function Recherche() {
     <div className={Style.PageRecherche}>
       <h1>Recherche</h1>
       <form onSubmit={submitFormulaire} className={Style.formulaire}>
-        <inputnode
+        <input
           className={Style.ChampRecherche}
           name="ChampRecherche"
           id="ChampRecherche"
