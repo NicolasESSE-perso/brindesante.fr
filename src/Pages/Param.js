@@ -12,12 +12,14 @@ function Param() {
   //NIE initialisation des composants
   const [texteAccueil, setTexteAcceuil] = useState("");
   const [texteApropos, setTexteApropos] = useState("");
+  const [emailContact, setEmailContact] = useState("");
   const [message, setMessage] = useState("");
 
   //NIE récupération des données
   const getParam = () => {
     setTexteAcceuil(param.texte_accueil);
     setTexteApropos(param.texte_apropos);
+    setEmailContact(param.email_contact);
   };
 
   //NIE à la création du composant
@@ -42,6 +44,7 @@ function Param() {
       body: JSON.stringify({
         texte_accueil: texteAccueil,
         texte_apropos: texteApropos,
+        email_contact: emailContact,
       }),
     });
 
@@ -75,6 +78,16 @@ function Param() {
           <TexteApropos
             value={texteApropos}
             onChange={(value) => setTexteApropos(value)}
+          />
+        </div>
+      </div>
+      <div className={Style.BlocParam}>
+        <div className={Style.TitreParam}>Email de contact</div>
+        <div className={Style.ComposantParam}>
+          <input
+            className={Style.input}
+            value={emailContact}
+            onChange={(e) => setEmailContact(e.target.value)}
           />
         </div>
       </div>

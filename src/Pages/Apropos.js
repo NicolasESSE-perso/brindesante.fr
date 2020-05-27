@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Style from "./Apropos.module.css";
 import Login from "../Components/Login/Login";
-import LogoDelphine from "../Images/Logo150.png";
 import { Link } from "react-router-dom";
 import TexteApropos from "../Components/TexteApropos/TexteApropos";
+import { ParamContext } from "../Context/ParamContext";
+import LogoDelphine from "../Components/Menu/LogoDelphine";
 
 function Apropos() {
-  const email = "nicolas.esse@gmail.com";
+  const [email, setEmail] = useState("");
+  const contexte = useContext(ParamContext);
+  const param = contexte.param;
+
+  useEffect(() => {
+    if (param) {
+      setEmail(param.email_contact);
+    }
+  }, [param]);
+
   const [afficherConnexion, setAfficherConnexion] = useState(false);
 
   const fermerPopUp = () => {
@@ -23,7 +33,7 @@ function Apropos() {
 
       <div className={Style.Logo}>
         <Link to="/">
-          <img src={LogoDelphine} alt="Logo" />
+          <LogoDelphine />
         </Link>
       </div>
       <h1 className={Style.Titre}>A propos de Brin de santé</h1>

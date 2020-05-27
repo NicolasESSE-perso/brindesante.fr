@@ -8,7 +8,7 @@ export const DelphineProvider = (props) => {
 
   //NIE pour ne pas m'authentifier à chaque compilation
   useState(() => {
-    if (process.env.REACT_APP_CONTEXTE === "devs") {
+    if (process.env.REACT_APP_CONTEXTE === "dev") {
       setIsConnected("Nicolas");
     }
   }, []);

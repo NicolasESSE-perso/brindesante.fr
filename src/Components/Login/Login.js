@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Style from "./Login.module.css";
-import LogoDelphine from "../../Images/Logo150.png";
+import LogoDelphine from "../../Images/Logo300.png";
 import ImageConnexion from "../../Images/ImageConnexion.svg";
 import { sha256 } from "js-sha256";
 import MessageErreur from "./MessageErreur";
