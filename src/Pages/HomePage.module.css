@@ -80,6 +80,9 @@
 
 .LogoMobile {
   display: none;
+  background-color: #6fa2a7;
+  padding-bottom: 20px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -93,7 +96,7 @@
   }
 
   .LogoMobile {
-    display: inline;
+    display: flex;
   }
 
   .Suggestions {

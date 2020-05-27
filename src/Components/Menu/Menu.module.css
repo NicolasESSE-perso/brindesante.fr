@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.Logo {
+  background-color: #6fa2a7;
+}
+
 .LiensFiches {
   display: flex;
   flex-direction: column;
