@@ -8,6 +8,7 @@ function TexteApropos({ value, onChange, isReadOnly }) {
   console.log(param);
 
   const style = {
+    fontFamily: "Lato",
     fontSize: "18px",
     border: "none",
     resize: "none",
@@ -15,6 +16,7 @@ function TexteApropos({ value, onChange, isReadOnly }) {
     width: "100%",
     opacity: 1,
     WebkitTextFillColor: "#333",
+    background: "White",
   };
 
   if (isReadOnly) {

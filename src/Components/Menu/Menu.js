@@ -5,7 +5,7 @@ import GroupeFiches from "../Menu/GroupeFiches";
 import { Link } from "react-router-dom";
 import Style from "./Menu.module.css";
 
-function Menu() {
+function Menu({ props }) {
   return (
     <div className={Style.Menu}>
       <div className={Style.Titre}>

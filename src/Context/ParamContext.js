@@ -27,6 +27,7 @@ export const ParamProvider = (props) => {
         texte_accueil: paramJson.texte_accueil,
         texte_apropos: paramJson.texte_apropos,
         email_contact: paramJson.email_contact,
+        mot_de_passe: paramJson.mot_de_passe,
       });
     };
     //NIE j'utilise la fonction pour récupérer mes données

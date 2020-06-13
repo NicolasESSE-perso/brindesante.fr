@@ -1,6 +1,5 @@
 import React from "react";
 import ImgLogo from "../../Images/Logo300.png";
-import Style from "./LogoDelphine.module.css";
 
 function LogoDelphine() {
   return (

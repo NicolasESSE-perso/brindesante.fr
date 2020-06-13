@@ -14,7 +14,7 @@ function Corrections() {
   //NIE mes constantes
   const [corrections, setCorrections] = useState([]);
   const [afficherPanneau, setAfficherPanneau] = useState(false);
-  const [editionCorrection, setEditionCorrection] = useState({});
+  const [editionCorrection, setEditionCorrection] = useState();
 
   //NIE récupération des corrections
   const getCorrections = async () => {

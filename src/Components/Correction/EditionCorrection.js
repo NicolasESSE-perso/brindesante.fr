@@ -16,13 +16,13 @@ export default function EditionCorrection({ correction, onClose, onSave }) {
   const [method, setMethod] = useState("POST");
 
   useEffect(() => {
-    if (correction) {
+    if (correction._id) {
+      console.log(correction);
       setId(correction._id);
       setTitre(correction.titre);
       setDescription(correction.description);
       setCommentaire(correction.commentaire);
       setEtat(correction.etat);
-
       setMethod("PATCH");
       setTitrePanneau(correction.titre);
     }
@@ -42,6 +42,7 @@ export default function EditionCorrection({ correction, onClose, onSave }) {
     //NIE on appelle l'API en PATCH
     const monUrlAPI = `${process.env.REACT_APP_URL_API_BRINDESANTE}/corrections/${id}`;
     console.log(monUrlAPI);
+    console.log(method);
     await fetch(monUrlAPI, {
       method: method,
       headers: {

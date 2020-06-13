@@ -91,6 +91,7 @@ function Param() {
           />
         </div>
       </div>
+
       <div className={Style.BoutonEnregistrer}>
         <BoutonEnregistrer onClick={sauvegarderParam} />
       </div>

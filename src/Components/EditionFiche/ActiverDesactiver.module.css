@@ -1,4 +1,4 @@
-.MasquerLaFiche {
+.Zoning {
   height: 50px;
   width: 240px;
   padding-left: 10px;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.MasquerLaFiche:hover {
+.Zoning:hover {
   background-color: #ededed;
   border-radius: 6px;
 }

@@ -15,6 +15,7 @@ function TexteBrinDeSante({ value, onChange, isReadOnly }) {
     opacity: 1,
     width: "100%",
     WebkitTextFillColor: "#6fa2a7",
+    background: "White",
   };
 
   if (isReadOnly) {

@@ -5,10 +5,10 @@ import EditionBouton from "../Components/Boutons/EditionBouton";
 import EditionListeArticle from "../Components/Articles/EditionListeArticles";
 import MonEditeur from "../Components/MonEditeur/MonEditeur";
 import EditionIllustrations from "../Images/EditionIllustrations";
-import CheckboxAccueil from "../Components/EditionFiche/CheckboxAccueil";
+//import CheckboxAccueil from "../Components/EditionFiche/CheckboxAccueil";
 import { ListeFichesContext } from "../Context/ListeFichesContext";
 import SelectGroupeFiche from "../Components/EditionFiche/SelectGroupeFiche";
-import MasquerLaFiche from "../Components/EditionFiche/MasquerLaFiche";
+import ActiverDesactiver from "../Components/EditionFiche/ActiverDesactiver";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
@@ -25,7 +25,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [afficherEnPageAccueil, setAfficherEnPageAccueil] = useState(false);
   const [groupeFiche, setGroupeFiche] = useState();
   const [isMasque, setIsMasque] = useState(false);
-
+  const [afficherNouvelleFiche, setAfficherNouvelleFiche] = useState(false);
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
     : "Création d'une fiche";
@@ -79,6 +79,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setAfficherEnPageAccueil(maFiche.afficher_en_page_accueil);
     setGroupeFiche(maFiche.groupe);
     setIsMasque(maFiche.is_masque);
+    setAfficherNouvelleFiche(maFiche.afficher_nouvelle_fiche);
   };
 
   //NIE Action sur ma popup
@@ -143,6 +144,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         afficher_en_page_accueil: afficherEnPageAccueil,
         groupe: groupeFiche,
         is_masque: isMasque,
+        afficher_nouvelle_fiche: afficherNouvelleFiche,
       }),
     });
     //NIE je force le contexte à se reload
@@ -203,13 +205,23 @@ function EditionFiche({ ficheId, onClose, onSave }) {
               </div>
 
               <div>
-                <CheckboxAccueil
-                  checked={afficherEnPageAccueil}
-                  onChange={(value) => setAfficherEnPageAccueil(value)}
-                />
-                <MasquerLaFiche
+                <ActiverDesactiver
+                  texte="Masquer la fiche"
                   checked={isMasque}
                   onChange={(value) => setIsMasque(value)}
+                  name="MasquerFiche"
+                />
+                <ActiverDesactiver
+                  texte="Nouvelle fiche"
+                  checked={afficherNouvelleFiche}
+                  onChange={(value) => setAfficherNouvelleFiche(value)}
+                  name="NouvelleFiche"
+                />
+                <ActiverDesactiver
+                  texte="Symptomes Frequents"
+                  checked={afficherEnPageAccueil}
+                  onChange={(value) => setAfficherEnPageAccueil(value)}
+                  name="FicheFrequente"
                 />
               </div>
             </div>
