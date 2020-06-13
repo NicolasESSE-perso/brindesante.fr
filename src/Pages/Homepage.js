@@ -11,6 +11,7 @@ function Homepage() {
   const fiches = contexte.fiches;
   const [fichesAccueil, setFichesAccueil] = useState([]);
   const [masquerBouton, setMasquerBouton] = useState(false);
+  const [nouvellesFiches, setNouvellesFiches] = useState([]);
 
   function AfficherBouton() {
     if (masquerBouton) {
@@ -27,7 +28,7 @@ function Homepage() {
   const filtrerFiches = () => {
     //NIE copy des fiches
     let tempFiches = [...fiches];
-    //NIE filtrer pout n'afficher que les fiches
+    //NIE filtrer pout n'afficher que les fiches à afficher en page d'accueil
     const resFiches = tempFiches.filter((fiche) => {
       if (fiche.afficher_en_page_accueil) {
         return 1;
@@ -38,8 +39,23 @@ function Homepage() {
     setFichesAccueil(resFiches);
   };
 
+  const filtrerNouvellesFiches = () => {
+    //NIE copy des fiches
+    let tempFiches = [...fiches];
+    //NIE filtrer pout n'afficher que les fiches à afficher dans nouvelles fiches
+    const resFiches = tempFiches.filter((fiche) => {
+      if (fiche.afficher_nouvelle_fiche) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    setNouvellesFiches(resFiches);
+  };
+
   useEffect(() => {
     filtrerFiches();
+    filtrerNouvellesFiches();
     // eslint-disable-next-line
   }, [fiches]);
 
@@ -57,22 +73,42 @@ function Homepage() {
         <div className={Style.Phrase}>
           <TexteBrinDeSante isReadOnly={true} />
         </div>
-
-        <div className={Style.DivSousTitre}>
-          <p className={Style.SousTitre}>Symptomes les plus fréquents</p>
-        </div>
-        {fichesAccueil.map((fiche) => (
-          <div className={Style.Suggestions} key={fiche._id}>
-            <FicheM
-              titre={fiche.titre}
-              fiche_id={fiche._id}
-              key={fiche._id}
-              description={fiche.description}
-              date_modif={fiche.date_modif}
-              image_url={fiche.image_url}
-            />
+        {nouvellesFiches.length > 0 ? (
+          <div className={Style.NouvellesFiches}>
+            <p className={Style.SousTitre}>Nouvelles fiches</p>
+            {nouvellesFiches.map((fiche) => (
+              <div className={Style.Suggestions} key={fiche._id}>
+                <FicheM
+                  titre={fiche.titre}
+                  fiche_id={fiche._id}
+                  key={fiche._id}
+                  description={fiche.description}
+                  date_modif={fiche.date_modif}
+                  image_url={fiche.image_url}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          ""
+        )}
+
+        <div className={Style.SymptomesFrequents}>
+          <p className={Style.SousTitre}>Symptômes les plus fréquents</p>
+
+          {fichesAccueil.map((fiche) => (
+            <div className={Style.Suggestions} key={fiche._id}>
+              <FicheM
+                titre={fiche.titre}
+                fiche_id={fiche._id}
+                key={fiche._id}
+                description={fiche.description}
+                date_modif={fiche.date_modif}
+                image_url={fiche.image_url}
+              />
+            </div>
+          ))}
+        </div>
         <div className={Style.DivBoutons}>
           {<AfficherBouton />}
           <Link to="/Apropos" className={Style.AproposMobile}>

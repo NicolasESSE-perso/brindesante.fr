@@ -6,6 +6,7 @@ import { DelphineContext } from "../Context/DelphineContext";
 import BoutonModifier from "../Components/Boutons/BoutonModifier";
 import Symptomes from "../Components/Fiche/Symptomes";
 import Illustrations from "../Images/Illustrations";
+import ImageFooter from "../Images/ImageFooter.png";
 
 function Fiche({ match }) {
   //NIE pour afficher le composant de modification
@@ -89,56 +90,63 @@ function Fiche({ match }) {
   }, [match.params.id]);
 
   return (
-    <div className={Style.Fiche}>
-      {popupModification}
+    <div className={Style.Container}>
+      <div className={Style.Fiche}>
+        {popupModification}
 
-      <div className={Style.BarreAction}>
-        {isConnected ? (
-          <BoutonModifier texte="Modifier" onClick={afficherPopup} />
-        ) : (
-          ""
-        )}
-      </div>
-
-      <div className={Style.EnteteFiche}>
-        <div className={Style.Illustration}>
-          <Illustrations monUrl={maFiche.image_url} />
+        <div className={Style.BarreAction}>
+          {isConnected ? (
+            <BoutonModifier texte="Modifier" onClick={afficherPopup} />
+          ) : (
+            ""
+          )}
         </div>
 
-        <div className={Style.Titre}>
-          <h1>{maFiche.titre_fiche}</h1>
-          <p className={Style.Description}>{maFiche.description}</p>
-          <p className={Style.DateModification}>Mise à jour le : {dateModif}</p>
-        </div>
-      </div>
-
-      <div>
-        <Symptomes texteHtml={symptomes} />
-      </div>
-
-      <div className={Style.FicheWrapper}>
-        <div className={Style.Conseil}>
-          <h1>Que faire ?</h1>
-          <p dangerouslySetInnerHTML={ToHtml(maFiche.conseils)}></p>
-        </div>
-        <div className={Style.AllezMedecin}>
-          <h1>Je vais chez le médecin si</h1>
-          <p
-            dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
-          ></p>
-        </div>
-      </div>
-
-      <div className={Style.Articles}>
-        {articles.map((article) => (
-          <div className={Style.Article} key={article._id}>
-            <Article
-              titre={article.titre}
-              texte={article.texte}
-              key={article._id}
-            />
+        <div className={Style.EnteteFiche}>
+          <div className={Style.Illustration}>
+            <Illustrations monUrl={maFiche.image_url} />
           </div>
-        ))}
+
+          <div className={Style.Titre}>
+            <h1>{maFiche.titre_fiche}</h1>
+            <p className={Style.Description}>{maFiche.description}</p>
+            <p className={Style.DateModification}>
+              Mise à jour le : {dateModif}
+            </p>
+          </div>
+        </div>
+
+        <div className={Style.Symptomes}>
+          <Symptomes texteHtml={symptomes} />
+        </div>
+
+        <div className={Style.FicheWrapper}>
+          <div className={Style.Conseil}>
+            <h1>Que faire ?</h1>
+            <p dangerouslySetInnerHTML={ToHtml(maFiche.conseils)}></p>
+          </div>
+          <div className={Style.AllezMedecin}>
+            <h1>Je vais chez le médecin si</h1>
+            <p
+              dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
+            ></p>
+          </div>
+        </div>
+
+        <div className={Style.Articles}>
+          {articles.map((article) => (
+            <div className={Style.Article} key={article._id}>
+              <Article
+                titre={article.titre}
+                texte={article.texte}
+                key={article._id}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={Style.Footer}>
+        <img style={{ maxWidth: "100%" }} src={ImageFooter} alt="" />
       </div>
     </div>
   );

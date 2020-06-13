@@ -1,9 +1,19 @@
-.Fiche {
-  padding-top: 30px;
+.Container {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding-bottom: 80px;
 }
+
+.Fiche {
+  flex: 4;
+  padding-top: 30px;
+}
+.Footer {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+}
+
 .EnteteFiche {
   display: flex;
   flex-direction: row;
@@ -69,7 +79,6 @@
 .Conseil {
   min-width: 49%;
   max-width: 49%;
-
   padding: 20px 20px 40px 20px;
   background-color: #e8e098;
 }
