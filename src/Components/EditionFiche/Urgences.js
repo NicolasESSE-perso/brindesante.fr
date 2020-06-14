@@ -22,7 +22,12 @@ export default function Urgences({ value, onChange, readOnly }) {
         <div className={Style.BorderImage}> </div>
         <img
           src={ImageUrgences}
-          style={{ minWidth: "70px", minHeight: "70px" }}
+          style={{
+            minWidth: "70px",
+            minHeight: "70px",
+            maxWidth: "70px",
+            maxHeight: "70px",
+          }}
           alt=""
         />
         <div className={Style.BorderImage}></div>
