@@ -7,6 +7,7 @@ import BoutonModifier from "../Components/Boutons/BoutonModifier";
 import Symptomes from "../Components/Fiche/Symptomes";
 import Illustrations from "../Images/Illustrations";
 import ImageFooter from "../Images/ImageFooter.png";
+import Urgences from "../Components/EditionFiche/Urgences";
 
 function Fiche({ match }) {
   //NIE pour afficher le composant de modification
@@ -125,11 +126,18 @@ function Fiche({ match }) {
             <h1>Que faire ?</h1>
             <p dangerouslySetInnerHTML={ToHtml(maFiche.conseils)}></p>
           </div>
-          <div className={Style.AllezMedecin}>
-            <h1>Je vais chez le médecin si</h1>
-            <p
-              dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
-            ></p>
+          <div className={Style.AllezMedecinEtUrgences}>
+            <div className={Style.AllezMedecin}>
+              <h1>Je vais chez le médecin si</h1>
+              <p
+                dangerouslySetInnerHTML={ToHtml(maFiche.aller_chez_le_medecin)}
+              ></p>
+            </div>
+            {maFiche.appeler_le_15 ? (
+              <Urgences value={maFiche.appeler_le_15} readOnly={true} />
+            ) : (
+              ""
+            )}
           </div>
         </div>
 

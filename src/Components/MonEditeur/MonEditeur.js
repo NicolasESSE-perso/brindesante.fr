@@ -4,7 +4,7 @@ import Style from "./MonEditeur.module.css";
 import { stateToHTML } from "draft-js-export-html";
 import { stateFromHTML } from "draft-js-import-html";
 
-function MonEditeur({ textHtml, onTextChange, placeholder }) {
+function MonEditeur({ textHtml, onTextChange }) {
   const state = stateFromHTML("<p><br></p>");
   const [initTexte, setInitTexte] = useState(false);
   const [editorState, setEditorState] = useState(
@@ -15,7 +15,7 @@ function MonEditeur({ textHtml, onTextChange, placeholder }) {
   useEffect(() => {
     //console.log({ textHtml: textHtml });
     if (!initTexte && textHtml !== "") {
-      //    console.log("Initilisation");
+      //console.log("Initilisation");
       setInitTexte(true);
       const state = stateFromHTML(textHtml);
       setEditorState(EditorState.createWithContent(state));

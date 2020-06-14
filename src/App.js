@@ -12,11 +12,12 @@ import Login from "./Components/Login/Login";
 import { DelphineProvider } from "./Context/DelphineContext";
 import MenuMobile from "./Pages/Mobile/MenuMobile";
 import MonEditeur from "./Components/MonEditeur/MonEditeur";
-import SelectGroupeFiche from "./Components/EditionFiche/SelectGroupeFiche";
+//import EditionFiche from "./EditionFiche/EditionFiche";
 import Param from "./Pages/Param";
 import { ParamProvider } from "./Context/ParamContext";
 import Stats from "./Pages/Stats";
 import Corrections from "./Pages/Corrections";
+import Urgences from "./Components/EditionFiche/Urgences";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
                 <Route path="/Recherche" component={Recherche} />
                 <Route path="/Login" component={Login} />
                 <Route path="/MenuMobile" component={MenuMobile} />
-                <Route path="/dev" component={SelectGroupeFiche} />
+                <Route path="/dev" component={Urgences} />
                 <Route path="/editeur" component={MonEditeur} />
                 <Route path="/param" component={Param} />
                 <Route path="/stats" component={Stats} />

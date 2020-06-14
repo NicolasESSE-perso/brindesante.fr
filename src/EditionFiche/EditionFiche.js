@@ -9,6 +9,7 @@ import EditionIllustrations from "../Images/EditionIllustrations";
 import { ListeFichesContext } from "../Context/ListeFichesContext";
 import SelectGroupeFiche from "../Components/EditionFiche/SelectGroupeFiche";
 import ActiverDesactiver from "../Components/EditionFiche/ActiverDesactiver";
+import Urgences from "../Components/EditionFiche/Urgences";
 
 function EditionFiche({ ficheId, onClose, onSave }) {
   //NIE Création de toutes mes constantes
@@ -26,6 +27,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
   const [groupeFiche, setGroupeFiche] = useState();
   const [isMasque, setIsMasque] = useState(false);
   const [afficherNouvelleFiche, setAfficherNouvelleFiche] = useState(false);
+  const [appeler15, setAppeler15] = useState("");
   const libelleEntete = ficheId
     ? "Modification d'une fiche"
     : "Création d'une fiche";
@@ -80,6 +82,9 @@ function EditionFiche({ ficheId, onClose, onSave }) {
     setGroupeFiche(maFiche.groupe);
     setIsMasque(maFiche.is_masque);
     setAfficherNouvelleFiche(maFiche.afficher_nouvelle_fiche);
+    maFiche.appeler_le_15
+      ? setAppeler15(maFiche.appeler_le_15)
+      : setAppeler15("");
   };
 
   //NIE Action sur ma popup
@@ -145,6 +150,7 @@ function EditionFiche({ ficheId, onClose, onSave }) {
         groupe: groupeFiche,
         is_masque: isMasque,
         afficher_nouvelle_fiche: afficherNouvelleFiche,
+        appeler_le_15: appeler15,
       }),
     });
     //NIE je force le contexte à se reload
@@ -259,6 +265,11 @@ function EditionFiche({ ficheId, onClose, onSave }) {
                   textHtml={allerMedecin}
                   placeholder="Quand doit-on aller chez le médecin ?"
                   colorBarre="#C4E3E6"
+                />
+                <Urgences
+                  value={appeler15}
+                  onChange={(value) => setAppeler15(value)}
+                  readOnly={false}
                 />
               </div>
             </div>
