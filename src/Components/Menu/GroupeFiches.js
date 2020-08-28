@@ -7,7 +7,7 @@ function GroupeFiches() {
   const contexte = useContext(ListeFichesContext);
 
   const groupes = contexte.groupes;
-
+  console.log(groupes);
   return (
     <div className={Style.GroupeFiches}>
       <FichesDuGroupe groupe={undefined} />
